@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "title": "ตารางที่ 11 จํานวนนักเรียน และห้องเรียน จําแนกตาม ประเภทโรงเรียน รายชั้น ปีการศึกษา 2569",
+    "source": "สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.)",
+    "academic_year": 2569,
+    "source_file": "11.xlsx",
+    "generated_at": "2026-09-13T13:16:40",
+    "teacher_ratio": 20.0,
+    "coverage_note": "ครอบคลุมเฉพาะสถานศึกษาสังกัด สพฐ. ไม่รวม อปท. เอกชน และสังกัดอื่น",
+    "caveat": "อัตรา 1:20 เป็นเกณฑ์อ้างอิงเพื่อการสาธิต เกณฑ์อัตรากำลังจริงของ ก.ค.ศ. จำแนกตามขนาดโรงเรียนและมีรายละเอียดมากกว่านี้",
+    "aggregation_note": "ข้อมูลเป็นค่ารวมระดับประเทศ จึงไม่สะท้อนการกระจายรายโรงเรียน ช่องว่างที่แท้จริงในโรงเรียนขนาดเล็กรายแห่งย่อมรุนแรงกว่าค่าเฉลี่ยนี้",
+    "grades_note": "รายชั้นและผลรวมย่อยรวม สพป. สพม. การศึกษาสงเคราะห์ และการศึกษาพิเศษ ไม่รวมศูนย์การศึกษาพิเศษ เพราะต้นทางบันทึกทั้งก้อนไว้ที่อนุบาล 1",
+    "core_keys": [
+      "primary_opec",
+      "secondary_ope"
+    ]
+  },
+  "national": [
+    {
+      "key": "primary_opec",
+      "name_th": "ประถมศึกษา (สพป.)",
+      "short": "สพป.",
+      "students": 3843825,
+      "classrooms": 263359,
+      "students_per_room": 14.6,
+      "teacher": {
+        "rule_headcount": 192191,
+        "rule_classroom": 263359,
+        "gap": 71168,
+        "gap_pct": 27.0,
+        "status": "deficit"
+      }
+    },
+    {
+      "key": "secondary_ope",
+      "name_th": "มัธยมศึกษา (สพม.)",
+      "short": "สพม.",
+      "students": 2251217,
+      "classrooms": 69704,
+      "students_per_room": 32.3,
+      "teacher": {
+        "rule_headcount": 112561,
+        "rule_classroom": 69704,
+        "gap": -42857,
+        "gap_pct": -61.5,
+        "status": "surplus"
+      }
+    },
+    {
+      "key": "welfare",
+      "name_th": "การศึกษาสงเคราะห์",
+      "short": "กศ.สงเคราะห์",
+      "students": 34725,
+      "classrooms": 2551,
+      "students_per_room": 13.61,
+      "teacher": {
+        "rule_headcount": 1736,
+        "rule_classroom": 2551,
+        "gap": 815,
+        "gap_pct": 31.9,
+        "status": "deficit"
+      }
+    },
+    {
+      "key": "special_ed",
+      "name_th": "การศึกษาพิเศษ",
+      "short": "กศ.พิเศษ",
+      "students": 12762,
+      "classrooms": 4731,
+      "students_per_room": 2.7,
+      "teacher": {
+        "rule_headcount": 638,
+        "rule_classroom": 4731,
+        "gap": 4093,
+        "gap_pct": 86.5,
+        "status": "deficit"
+      }
+    },
+    {
+      "key": "special_ctr",
+      "name_th": "ศูนย์การศึกษาพิเศษ",
+      "short": "ศูนย์ กศ.พิเศษ",
+      "students": 30311,
+      "classrooms": 7702,
+      "students_per_room": 3.94,
+      "teacher": {
+        "rule_headcount": 1516,
+        "rule_classroom": 7702,
+        "gap": 6186,
+        "gap_pct": 80.3,
+        "status": "deficit"
+      }
+    },
+    {
+      "key": "total",
+      "name_th": "รวมทุกสังกัด สพฐ.",
+      "short": "รวม",
+      "students": 6172840,
+      "classrooms": 348047,
+      "students_per_room": 17.74,
+      "teacher": {
+        "rule_headcount": 308642,
+        "rule_classroom": 348047,
+        "gap": 39405,
+        "gap_pct": 11.3,
+        "status": "deficit"
+      }
+    }
+  ],
+  "grades": [
+    {
+      "label": "อนุบาล 1",
+      "level": "ปฐมวัย",
+      "students": 66636,
+      "classrooms": 7077,
+      "students_per_room": 9.42
+    },
+    {
+      "label": "อนุบาล 2",
+      "level": "ปฐมวัย",
+      "students": 303288,
+      "classrooms": 27107,
+      "students_per_room": 11.19
+    },
+    {
+      "label": "อนุบาล 3",
+      "level": "ปฐมวัย",
+      "students": 334747,
+      "classrooms": 27816,
+      "students_per_room": 12.03
+    },
+    {
+      "label": "ประถมศึกษาปีที่ 1",
+      "level": "ประถม",
+      "students": 410425,
+      "classrooms": 29829,
+      "students_per_room": 13.76
+    },
+    {
+      "label": "ประถมศึกษาปีที่ 2",
+      "level": "ประถม",
+      "students": 433610,
+      "classrooms": 29923,
+      "students_per_room": 14.49
+    },
+    {
+      "label": "ประถมศึกษาปีที่ 3",
+      "level": "ประถม",
+      "students": 449855,
+      "classrooms": 30077,
+      "students_per_room": 14.96
+    },
+    {
+      "label": "ประถมศึกษาปีที่ 4",
+      "level": "ประถม",
+      "students": 450380,
+      "classrooms": 30020,
+      "students_per_room": 15.0
+    },
+    {
+      "label": "ประถมศึกษาปีที่ 5",
+      "level": "ประถม",
+      "students": 462565,
+      "classrooms": 30075,
+      "students_per_room": 15.38
+    },
+    {
+      "label": "ประถมศึกษาปีที่ 6",
+      "level": "ประถม",
+      "students": 475740,
+      "classrooms": 30373,
+      "students_per_room": 15.66
+    },
+    {
+      "label": "มัธยมศึกษาปีที่ 1",
+      "level": "ม.ต้น",
+      "students": 554262,
+      "classrooms": 20544,
+      "students_per_room": 26.98
+    },
+    {
+      "label": "มัธยมศึกษาปีที่ 2",
+      "level": "ม.ต้น",
+      "students": 574735,
+      "classrooms": 20757,
+      "students_per_room": 27.69
+    },
+    {
+      "label": "มัธยมศึกษาปีที่ 3",
+      "level": "ม.ต้น",
+      "students": 552600,
+      "classrooms": 20551,
+      "students_per_room": 26.89
+    },
+    {
+      "label": "มัธยมศึกษาปีที่ 4 หรือ เทียบเท่า",
+      "level": "ม.ปลาย",
+      "students": 375959,
+      "classrooms": 12264,
+      "students_per_room": 30.66
+    },
+    {
+      "label": "มัธยมศึกษาปีที่ 5 หรือ เทียบเท่า",
+      "level": "ม.ปลาย",
+      "students": 354681,
+      "classrooms": 12102,
+      "students_per_room": 29.31
+    },
+    {
+      "label": "มัธยมศึกษาปีที่ 6 หรือ เทียบเท่า",
+      "level": "ม.ปลาย",
+      "students": 343046,
+      "classrooms": 11830,
+      "students_per_room": 29.0
+    }
+  ],
+  "subtotals": [
+    {
+      "label": "รวมก่อนประถมศึกษา",
+      "level": "ปฐมวัย",
+      "students": 704671,
+      "classrooms": 62000,
+      "students_per_room": 11.37
+    },
+    {
+      "label": "รวมประถมศึกษา",
+      "level": "ประถม",
+      "students": 2682575,
+      "classrooms": 180297,
+      "students_per_room": 14.88
+    },
+    {
+      "label": "รวมมัธยมศึกษาตอนต้น",
+      "level": "ม.ต้น",
+      "students": 1681597,
+      "classrooms": 61852,
+      "students_per_room": 27.19
+    },
+    {
+      "label": "รวมมัธยมศึกษาตอนปลาย หรือ เทียบเท่า",
+      "level": "ม.ปลาย",
+      "students": 1073686,
+      "classrooms": 36196,
+      "students_per_room": 29.66
+    }
+  ],
+  "grand_total": {
+    "students": 6172840,
+    "classrooms": 348047,
+    "students_per_room": 17.74,
+    "teacher": {
+      "rule_headcount": 308642,
+      "rule_classroom": 348047,
+      "gap": 39405,
+      "gap_pct": 11.3,
+      "status": "deficit"
+    }
+  }
+}

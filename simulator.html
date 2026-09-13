@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เครื่องมือจำลองสูตรจัดสรร (WSF Simulator) | ความเสมอภาคทางการศึกษาไทย</title>
+<meta name="description" content="เครื่องมือจำลองเปรียบเทียบการจัดสรรงบประมาณและอัตรากำลังครู ระหว่างสูตรรายหัวแบบเดิมกับสูตรถ่วงน้ำหนักตามความจำเป็น โดยใช้ข้อมูลจริงจาก สพฐ. ปีการศึกษา 2569">
+<!-- EET:CHROME-HEAD -->
+<meta name="theme-color" content="#1a2b4c">
+<link rel="canonical" href="https://burapatis.github.io/equity-edu-th/simulator.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="th_TH">
+<meta property="og:url" content="https://burapatis.github.io/equity-edu-th/simulator.html">
+<meta property="og:title" content="เครื่องมือจำลองสูตรจัดสรร (WSF Simulator) | ความเสมอภาคทางการศึกษาไทย">
+<meta property="og:description" content="เครื่องมือจำลองเปรียบเทียบการจัดสรรงบประมาณและอัตรากำลังครู ระหว่างสูตรรายหัวแบบเดิมกับสูตรถ่วงน้ำหนักตามความจำเป็น โดยใช้ข้อมูลจริงจาก สพฐ. ปีการศึกษา 2569">
+<meta property="og:image" content="https://burapatis.github.io/equity-edu-th/assets/img/og-image.png">
+<meta property="og:image:alt" content="97:3 ความเสมอภาคทางการศึกษาไทย">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="เครื่องมือจำลองสูตรจัดสรร (WSF Simulator) | ความเสมอภาคทางการศึกษาไทย">
+<meta name="twitter:description" content="เครื่องมือจำลองเปรียบเทียบการจัดสรรงบประมาณและอัตรากำลังครู ระหว่างสูตรรายหัวแบบเดิมกับสูตรถ่วงน้ำหนักตามความจำเป็น โดยใช้ข้อมูลจริงจาก สพฐ. ปีการศึกษา 2569">
+<meta name="twitter:image" content="https://burapatis.github.io/equity-edu-th/assets/img/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/og-image.png">
+<!-- /EET:CHROME-HEAD -->
+</head>
+<body>
+<!-- EET:HEADER -->
+<a href="#main" class="skip-link">ข้ามไปยังเนื้อหาหลัก</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="หน้าแรก">
+      <span class="brand-mark">97<span>:</span>3</span>
+      <span class="brand-text"><strong>ความเสมอภาคทางการศึกษาไทย</strong><small>Equity Education Thailand</small></span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="เมนูหลัก">
+      <a href="index.html">หน้าแรก</a>
+      <a href="report.html">รายงานเต็ม</a>
+      <a href="simulator.html" aria-current="page" class="is-active">เครื่องมือจำลอง</a>
+      <a href="gap-map.html">แผนที่ช่องว่าง</a>
+      <a href="resources.html" class="nav-cta">ทรัพยากร</a>
+    </nav>
+    <div class="header-tools">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="สลับเป็นโหมดมืด" title="สลับโหมดสี" aria-pressed="false">
+        <svg class="i-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn burger" id="navToggle" type="button" aria-label="เปิดเมนู" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<!-- /EET:HEADER -->
+
+<main id="main">
+
+<section class="section" style="padding-bottom:34px">
+  <div class="container">
+    <span class="section-num">เครื่องมือเชิงนโยบาย</span>
+    <h1 style="font-size:clamp(1.7rem,3.6vw,2.5rem);margin-bottom:14px">เครื่องมือจำลองสูตรจัดสรรทรัพยากร</h1>
+    <p class="lead" style="margin-bottom:0">
+      ทดลองปรับปัจจัยของโรงเรียน แล้วดูว่า <strong>สูตรรายหัวแบบเดิม</strong> กับ
+      <strong>สูตรถ่วงน้ำหนักตามความจำเป็น (WSF)</strong> ให้ผลต่างกันอย่างไร
+      — ค่าตั้งต้นคำนวณจากข้อมูลจริงของ สพฐ. ปีการศึกษา 2569
+    </p>
+  </div>
+</section>
+
+<section class="section section-alt" style="padding-top:44px">
+  <div class="container">
+    <header class="section-head" style="margin-bottom:28px">
+      <h2>ภาพระดับประเทศจากข้อมูลจริง</h2>
+      <p class="section-sub">ทำไมเกณฑ์ที่อิง “จำนวนนักเรียน” จึงลงโทษโรงเรียนประถมอย่างเป็นระบบ</p>
+    </header>
+    <div id="nationalPanel" class="loading">กำลังโหลดข้อมูล…</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <header class="section-head" style="margin-bottom:30px">
+      <h2>จำลองรายโรงเรียน</h2>
+      <p class="section-sub">เลือกรูปแบบโรงเรียนตั้งต้น แล้วปรับค่าเพื่อดูผลทันที</p>
+    </header>
+
+    <div class="sim-shell">
+      <aside class="panel panel-sticky">
+        <h3>ปัจจัยของโรงเรียน</h3>
+        <p class="panel-sub">ค่าตั้งต้นอ้างอิงจากค่าเฉลี่ยจริงรายชั้นของ สพฐ.</p>
+        <div class="preset-row" id="presetRow"></div>
+
+        <div class="field">
+          <label for="inStudents">จำนวนนักเรียน <span class="val" id="vStudents">48 คน</span></label>
+          <input type="range" id="inStudents" min="10" max="1500" step="1" value="48">
+          <span class="hint">ลากเพื่อปรับ หรือพิมพ์ค่าด้านล่าง</span>
+          <input type="number" id="inStudentsNum" min="1" max="5000" value="48" style="margin-top:8px">
+        </div>
+        <div class="field">
+          <label for="inRooms">จำนวนห้องเรียนที่ต้องเปิด <span class="val" id="vRooms">6 ห้อง</span></label>
+          <input type="range" id="inRooms" min="1" max="60" step="1" value="6">
+          <span class="hint">จำนวนชั้นเรียนตามหลักสูตร — ไม่ลดลงตามจำนวนเด็ก</span>
+        </div>
+        <div class="field">
+          <label for="inPoor">สัดส่วนนักเรียนยากจนพิเศษ <span class="val" id="vPoor">60%</span></label>
+          <input type="range" id="inPoor" min="0" max="100" step="1" value="60">
+          <span class="hint">น้ำหนัก +0.50 ต่อคน</span>
+        </div>
+        <div class="field">
+          <label for="inSen">สัดส่วนที่มีความต้องการพิเศษ <span class="val" id="vSen">5%</span></label>
+          <input type="range" id="inSen" min="0" max="40" step="1" value="5">
+          <span class="hint">น้ำหนัก +1.20 ต่อคน</span>
+        </div>
+        <div class="field">
+          <label for="inLang">สัดส่วนที่ภาษาแม่ไม่ใช่ภาษาไทย <span class="val" id="vLang">20%</span></label>
+          <input type="range" id="inLang" min="0" max="100" step="1" value="20">
+          <span class="hint">น้ำหนัก +0.30 ต่อคน</span>
+        </div>
+        <div class="field">
+          <label for="inRemote">ระดับความห่างไกล <span class="val" id="vRemote">ระดับ 3</span></label>
+          <input type="range" id="inRemote" min="1" max="5" step="1" value="3">
+          <span class="hint">1 = ในเขตเมือง · 5 = พื้นที่สูง/เกาะ/ชายแดน (ตัวคูณ 1.00–1.40)</span>
+        </div>
+
+        <details style="margin-top:8px">
+          <summary style="cursor:pointer;font-size:.86rem;font-weight:600;color:var(--text-2)">⚙️ พารามิเตอร์สูตร (ผู้ใช้ขั้นสูง)</summary>
+          <div style="padding-top:16px">
+            <div class="field">
+              <label for="inBase">เงินฐานต่อหัว (บาท/ปี) <span class="val" id="vBase">6,000</span></label>
+              <input type="range" id="inBase" min="2000" max="20000" step="500" value="6000">
+            </div>
+            <div class="field">
+              <label for="inFixed">Fixed Cost Floor (บาท/โรงเรียน/ปี) <span class="val" id="vFixed">350,000</span></label>
+              <input type="range" id="inFixed" min="0" max="1200000" step="25000" value="350000">
+            </div>
+            <div class="field">
+              <label for="inRatio">อัตราครูอ้างอิง 1 ต่อ <span class="val" id="vRatio">20</span></label>
+              <input type="range" id="inRatio" min="10" max="35" step="1" value="20">
+            </div>
+          </div>
+        </details>
+      </aside>
+
+      <div>
+        <div class="kpi-row">
+          <div class="kpi old">
+            <div class="kpi-cap">🔴 สูตรเดิม — รายหัวเท่ากัน</div>
+            <div class="kpi-num" id="outOldPer">0<small>บาท/คน/ปี</small></div>
+            <div class="kpi-sub">งบรวม <b id="outOldTotal">0</b> บาท/ปี</div>
+          </div>
+          <div class="kpi new">
+            <div class="kpi-cap">🟢 สูตร WSF — ถ่วงน้ำหนักตามความจำเป็น</div>
+            <div class="kpi-num" id="outNewPer">0<small>บาท/คน/ปี</small></div>
+            <div class="kpi-sub">งบรวม <b id="outNewTotal">0</b> บาท/ปี</div>
+          </div>
+        </div>
+
+        <div class="delta-strip">
+          <span>โรงเรียนนี้จะได้รับงบต่อหัว</span>
+          <b id="outDelta">+0%</b>
+          <span id="outDeltaWord">เมื่อเปลี่ยนไปใช้สูตร WSF</span>
+        </div>
+
+        <div class="chart-box">
+          <h4>📊 เปรียบเทียบงบประมาณต่อหัว</h4>
+          <div class="chart-wrap"><canvas id="chartBudget" role="img" aria-label="เปรียบเทียบงบประมาณต่อหัวระหว่างสูตรรายหัวกับสูตร WSF"></canvas></div>
+        </div>
+
+        <div class="chart-box">
+          <h4>👩‍🏫 ความต้องการครู — กฎเดิม vs กฎที่เสนอ</h4>
+          <div class="chart-wrap"><canvas id="chartTeacher" role="img" aria-label="เปรียบเทียบความต้องการครูระหว่างกฎรายหัวกับกฎห้องเรียน"></canvas></div>
+          <div class="gapbar" id="gapBar"></div>
+          <p id="teacherNote" style="font-size:.88rem;color:var(--text-2);margin:0"></p>
+        </div>
+
+        <div class="chart-box">
+          <h4>🧮 การแยกองค์ประกอบของสูตร WSF</h4>
+          <table class="breakdown" id="tblBreak"></table>
+        </div>
+
+        <div class="datasrc" id="dataSrc">กำลังโหลดข้อมูลต้นทาง…</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="callout callout-warn">
+      <div class="callout-icon">⚠️</div>
+      <div>
+        <h4>ข้อจำกัดที่ต้องทราบก่อนนำผลไปใช้</h4>
+        <p>ค่าน้ำหนักทั้งหมดในเครื่องมือนี้เป็น <strong>ตัวเลขเพื่อการอภิปรายเชิงกลไก</strong> ยังไม่ใช่ค่าที่ผ่านการสอบเทียบ — ค่าที่ใช้ได้จริงต้องมาจาก <em>Cost Function Analysis</em> ของต้นทุนการจัดการศึกษารายประเภทโรงเรียน</p>
+        <p style="margin-top:10px">นอกจากนี้ ข้อมูลต้นทางเป็น <strong>ค่ารวมระดับประเทศ</strong> จึงไม่สะท้อนการกระจายรายโรงเรียน — ช่องว่างที่แท้จริงในโรงเรียนขนาดเล็กรายแห่ง <strong>ย่อมรุนแรงกว่าค่าเฉลี่ยที่แสดง</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- EET:FOOTER -->
+<footer class="site-footer">
+  <div class="container footer-bottom">
+    <p>© 2569 Equity Education Thailand · <a href="index.html">กลับหน้าแรก</a> · เนื้อหา <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.th" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> · โค้ด <a href="LICENSE">MIT</a></p>
+    <p class="disclaimer">ข้อมูลนักเรียนและห้องเรียนจาก สพฐ. ปีการศึกษา 2569 · ค่าน้ำหนักเป็นตัวเลขสาธิต</p>
+  </div>
+</footer>
+<!-- /EET:FOOTER -->
+
+<button class="to-top" id="toTop" aria-label="กลับขึ้นด้านบน">↑</button>
+
+<script src="assets/vendor/chart.umd.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+(function () {
+  'use strict';
+  const $ = s => document.querySelector(s);
+  const fmt = window.EET.fmt;
+
+  const W = { poor: 0.50, sen: 1.20, lang: 0.30 };
+  const REMOTE = { 1:1.00, 2:1.10, 3:1.20, 4:1.30, 5:1.40 };
+  const REMOTE_LABEL = { 1:'ระดับ 1 — ในเขตเมือง', 2:'ระดับ 2 — ชานเมือง',
+    3:'ระดับ 3 — ชนบททั่วไป', 4:'ระดับ 4 — ห่างไกล', 5:'ระดับ 5 — พื้นที่สูง/เกาะ/ชายแดน' };
+
+  const el = {
+    students:$('#inStudents'), studentsNum:$('#inStudentsNum'), rooms:$('#inRooms'),
+    poor:$('#inPoor'), sen:$('#inSen'), lang:$('#inLang'), remote:$('#inRemote'),
+    base:$('#inBase'), fixed:$('#inFixed'), ratio:$('#inRatio')
+  };
+  let chartBudget = null, chartTeacher = null, DATA = null, RATIO = 20;
+
+  function gaps(d) {
+    return d.national.filter(u => u.key !== 'total' && u.classrooms).map(u => {
+      const a = u.students / RATIO, b = u.classrooms;
+      return { ...u, spr: u.students / u.classrooms, ruleA: a, ruleB: b, gap: b - a };
+    });
+  }
+
+  function initCharts() {
+    const c = window.EET.chartColors();
+    const common = {
+      responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: x => ' ' + fmt(x.parsed.y) } } },
+      scales:{
+        x:{ grid:{display:false}, ticks:{ color:c.text, font:{family:'IBM Plex Sans Thai', size:12} } },
+        y:{ grid:{color:c.grid}, ticks:{ color:c.text, callback:v=>fmt(v) }, beginAtZero:true }
+      }
+    };
+    chartBudget = new Chart($('#chartBudget'), {
+      type:'bar',
+      data:{ labels:['สูตรเดิม (รายหัว)','สูตร WSF (ตามความจำเป็น)'],
+        datasets:[{ data:[0,0], backgroundColor:['#c9483c','#2e8b57'], borderRadius:8, barPercentage:.55 }] },
+      options: common
+    });
+    chartTeacher = new Chart($('#chartTeacher'), {
+      type:'bar',
+      data:{ labels:['กฎเดิม (นักเรียน ÷ อัตรา)','กฎที่เสนอ (1 ครู / 1 ห้อง)'],
+        datasets:[{ data:[0,0], backgroundColor:['#c9483c','#2e8b57'], borderRadius:8, barPercentage:.55 }] },
+      options: common
+    });
+  }
+
+  function calc() {
+    const s = Math.max(1, +el.students.value);
+    const rooms = Math.max(1, +el.rooms.value);
+    const p = +el.poor.value/100, sen = +el.sen.value/100, lang = +el.lang.value/100;
+    const rLvl = +el.remote.value, base = +el.base.value, fixed = +el.fixed.value, ratio = +el.ratio.value;
+    const mult = REMOTE[rLvl];
+
+    $('#vStudents').textContent = fmt(s) + ' คน';
+    $('#vRooms').textContent = rooms + ' ห้อง';
+    $('#vPoor').textContent = el.poor.value + '%';
+    $('#vSen').textContent = el.sen.value + '%';
+    $('#vLang').textContent = el.lang.value + '%';
+    $('#vRemote').textContent = REMOTE_LABEL[rLvl];
+    $('#vBase').textContent = fmt(base);
+    $('#vFixed').textContent = fmt(fixed);
+    $('#vRatio').textContent = ratio;
+    if (el.studentsNum.value !== String(s)) el.studentsNum.value = s;
+
+    const oldTotal = s * base;
+    const wPoor = s*p*W.poor, wSen = s*sen*W.sen, wLang = s*lang*W.lang;
+    const weighted = s + wPoor + wSen + wLang;
+    const newTotal = fixed + weighted * base * mult;
+
+    const oldPer = oldTotal/s, newPer = newTotal/s;
+    $('#outOldPer').innerHTML = fmt(oldPer) + '<small>บาท/คน/ปี</small>';
+    $('#outNewPer').innerHTML = fmt(newPer) + '<small>บาท/คน/ปี</small>';
+    $('#outOldTotal').textContent = fmt(oldTotal);
+    $('#outNewTotal').textContent = fmt(newTotal);
+
+    const d = (newPer/oldPer - 1) * 100;
+    $('#outDelta').textContent = (d>=0?'+':'') + d.toFixed(0) + '%';
+    $('#outDeltaWord').textContent = d >= 0
+      ? 'มากกว่าเดิม เมื่อใช้สูตร WSF'
+      : 'น้อยกว่าเดิม — โรงเรียนกลุ่มนี้ได้รับเกินความจำเป็นในสูตรเดิม';
+
+    chartBudget.data.datasets[0].data = [oldPer, newPer];
+    chartBudget.update('none');
+
+    const tOld = s/ratio, tNew = rooms, gap = tNew - tOld;
+    chartTeacher.data.datasets[0].data = [tOld, tNew];
+    chartTeacher.update('none');
+
+    const total = Math.max(tOld, tNew) || 1;
+    $('#gapBar').innerHTML = gap > 0
+      ? `<i class="gap-surplus" style="width:${(tOld/total*100).toFixed(1)}%">ได้ ${tOld.toFixed(1)}</i>
+         <i class="gap-deficit" style="width:${(gap/total*100).toFixed(1)}%">ขาด ${gap.toFixed(1)}</i>`
+      : `<i class="gap-surplus" style="width:100%">เพียงพอต่อจำนวนห้องเรียน</i>`;
+
+    $('#teacherNote').innerHTML = gap > 0
+      ? `ภายใต้เกณฑ์เดิม โรงเรียนนี้ได้ครูราว <b>${tOld.toFixed(1)} คน</b> แต่ต้องเปิดสอน <b>${rooms} ห้อง</b>
+         → ครู 1 คนต้องรับผิดชอบเฉลี่ย <b>${(rooms/Math.max(tOld,0.1)).toFixed(1)} ห้อง</b>
+         <br><b style="color:var(--red-600)">นี่ไม่ใช่ปัญหาของคน แต่เป็นปัญหาของเลขคณิต</b>`
+      : `ภายใต้เกณฑ์เดิม โรงเรียนนี้ได้ครู <b>${tOld.toFixed(1)} คน</b> สำหรับ <b>${rooms} ห้อง</b>
+         — เพียงพอ และมีส่วนเกิน <b>${Math.abs(gap).toFixed(1)} อัตรา</b>`;
+
+    $('#tblBreak').innerHTML = `
+      <thead><tr><th>องค์ประกอบ</th><th>วิธีคำนวณ</th><th>บาท/ปี</th></tr></thead>
+      <tbody>
+        <tr><td>① Fixed Cost Floor</td><td>ต้นทุนคงที่ต่อโรงเรียน</td><td>${fmt(fixed)}</td></tr>
+        <tr><td>② นักเรียนฐาน</td><td>${fmt(s)} คน × 1.00</td><td>${fmt(s*base*mult)}</td></tr>
+        <tr><td>③ น้ำหนักความยากจน</td><td>${fmt(s*p)} คน × +${W.poor}</td><td>${fmt(wPoor*base*mult)}</td></tr>
+        <tr><td>④ น้ำหนักความต้องการพิเศษ</td><td>${fmt(s*sen)} คน × +${W.sen}</td><td>${fmt(wSen*base*mult)}</td></tr>
+        <tr><td>⑤ น้ำหนักด้านภาษา</td><td>${fmt(s*lang)} คน × +${W.lang}</td><td>${fmt(wLang*base*mult)}</td></tr>
+        <tr><td>⑥ ตัวคูณบริบทพื้นที่</td><td>${REMOTE_LABEL[rLvl]} (× ${mult.toFixed(2)})</td><td>รวมในข้อ ②–⑤</td></tr>
+        <tr class="sum"><td colspan="2">รวมงบตามสูตร WSF</td><td>${fmt(newTotal)}</td></tr>
+      </tbody>`;
+  }
+
+  function renderNational(d) {
+    const g = gaps(d);
+    const a = window.EET.analyse(d);
+    const prim = a.core.primary;
+    const sec  = a.core.secondary;
+    const gt = d.grand_total || {
+      students: g.reduce((s,x)=>s+x.students,0),
+      classrooms: g.reduce((s,x)=>s+x.classrooms,0)
+    };
+    const gtSpr = (gt.students/gt.classrooms).toFixed(1);
+
+    const rows = g.map(t => `
+      <tr>
+        <td><b>${t.name_th}</b>${window.EET.CORE_KEYS.includes(t.key) ? '' : ' <span class="lv">บริบทพิเศษ</span>'}</td>
+        <td style="text-align:right">${fmt(t.students)}</td>
+        <td style="text-align:right">${fmt(t.classrooms)}</td>
+        <td style="text-align:right"><b style="color:${t.spr<RATIO?'var(--red-600)':'var(--green-600)'}">${t.spr.toFixed(1)}</b></td>
+      </tr>`).join('');
+
+    $('#nationalPanel').innerHTML = `
+      <div class="stat-grid" style="margin-bottom:26px">
+        <div class="stat"><div class="stat-num">${prim.spr.toFixed(1)}<small>คน/ห้อง</small></div>
+          <div class="stat-label">ประถมศึกษา (สพป.)</div>
+          <div class="stat-meta"><span class="conf conf-high">ข้อมูลจริง</span> ${fmt(prim.students)} คน</div></div>
+        <div class="stat"><div class="stat-num">${sec.spr.toFixed(1)}<small>คน/ห้อง</small></div>
+          <div class="stat-label">มัธยมศึกษา (สพม.)</div>
+          <div class="stat-meta"><span class="conf conf-high">ข้อมูลจริง</span> ${fmt(sec.students)} คน</div></div>
+        <div class="stat is-alert"><div class="stat-num">${fmt(prim.gap)}<small>อัตรา</small></div>
+          <div class="stat-label"><strong>สพป. ขาดครู</strong> เมื่อเทียบกับจำนวนห้องเรียน</div>
+          <div class="stat-meta">คำนวณที่เกณฑ์ 1:${RATIO}</div></div>
+        <div class="stat"><div class="stat-num">${fmt(Math.abs(sec.gap))}<small>อัตรา</small></div>
+          <div class="stat-label"><strong>สพม. มีส่วนเกิน</strong> เมื่อเทียบกับจำนวนห้องเรียน</div>
+          <div class="stat-meta">คำนวณที่เกณฑ์ 1:${RATIO}</div></div>
+      </div>
+
+      <div class="table-scroll" style="margin-bottom:24px">
+        <table class="data-table">
+          <thead><tr><th>ประเภทโรงเรียน</th><th style="text-align:right">นักเรียน</th>
+          <th style="text-align:right">ห้องเรียน</th><th style="text-align:right">นักเรียน/ห้อง</th></tr></thead>
+          <tbody>${rows}
+            <tr style="background:var(--bg-alt);font-weight:700">
+              <td><b>รวมทั้งสิ้น</b></td>
+              <td style="text-align:right">${fmt(gt.students)}</td>
+              <td style="text-align:right">${fmt(gt.classrooms)}</td>
+              <td style="text-align:right">${gtSpr}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-danger" style="margin-top:0">
+        <div class="callout-icon">💥</div>
+        <div>
+          <h4>ข้อค้นพบสำคัญจากข้อมูลจริง</h4>
+          <p>ระบบหลัก (สพป./สพม.) ขาดสุทธิราว <b>${fmt(a.core.net)} อัตรา</b> — เกิดจาก
+            <b>การขาด ${fmt(a.core.deficit)} อัตราที่ สพป.</b> ที่ถูกกลบด้วย <b>ส่วนเกิน ${fmt(a.core.surplus)} อัตราใน สพม.</b></p>
+          <p style="margin-top:10px">หากใช้โมเดล 1:20 กับทุกประเภท รวมการศึกษาพิเศษ จะได้ขาด ${fmt(a.all.deficit)} สุทธิ ${fmt(a.all.net)} แต่กลุ่มนั้นมีนักเรียนต่อห้อง 2.7–3.9 โดยเจตนา ไม่ควรอ่านเป็นความขาดแบบเดียวกับ สพป.</p>
+          <p style="margin-top:10px;font-size:1.02rem"><mark>ปัญหาของเราคือ “การกระจาย” ไม่ใช่ “จำนวน”</mark></p>
+          <p style="margin-top:14px"><a href="gap-map.html" class="btn btn-sm">ดูรายละเอียดในแผนที่ช่องว่าง →</a></p>
+        </div>
+      </div>`;
+
+    $('#dataSrc').innerHTML =
+      `<b>แหล่งข้อมูล:</b> ${d.meta.title}<br>
+       <b>หน่วยงาน:</b> ${d.meta.source} · ปีการศึกษา ${d.meta.academic_year}<br>
+       <b>ขอบเขต:</b> ${d.meta.coverage_note}`;
+  }
+
+  function buildPresets(d) {
+    const lv = name => {
+      const g = d.grades.filter(x => (x.level||'').includes(name) && x.classrooms);
+      return g.length ? g.reduce((s,x)=>s+x.students/x.classrooms,0)/g.length : 15;
+    };
+    const primSPR = lv('ประถม');
+    return [
+      { name:'โรงเรียนเล็กบนดอย', rooms:6,  students:48,                        poor:85, sen:4, lang:90, remote:5 },
+      { name:'โรงเรียนเล็กชนบท',  rooms:6,  students:Math.round(6*primSPR*.6),  poor:65, sen:5, lang:25, remote:4 },
+      { name:'ประถมขนาดเฉลี่ย',   rooms:6,  students:Math.round(6*primSPR),     poor:45, sen:5, lang:12, remote:3 },
+      { name:'มัธยมขนาดกลาง',     rooms:18, students:Math.round(18*30),         poor:30, sen:3, lang:6,  remote:2 },
+      { name:'โรงเรียนใหญ่ในเมือง',rooms:36, students:Math.round(36*38),        poor:12, sen:2, lang:2,  remote:1 }
+    ];
+  }
+
+  function renderPresets(list) {
+    $('#presetRow').innerHTML = list.map((p,i) =>
+      `<button class="preset-btn${i===0?' is-on':''}" data-i="${i}">${p.name}</button>`).join('');
+    $('#presetRow').addEventListener('click', e => {
+      const b = e.target.closest('.preset-btn'); if (!b) return;
+      document.querySelectorAll('.preset-btn').forEach(x => x.classList.remove('is-on'));
+      b.classList.add('is-on');
+      const p = list[+b.dataset.i];
+      el.students.value = el.studentsNum.value = p.students;
+      el.rooms.value = p.rooms; el.poor.value = p.poor;
+      el.sen.value = p.sen; el.lang.value = p.lang; el.remote.value = p.remote;
+      calc();
+    });
+  }
+
+  async function boot() {
+    DATA = await window.EET.loadData();
+    RATIO = (DATA.meta && DATA.meta.teacher_ratio) || 20;
+    el.ratio.value = RATIO;
+
+    initCharts();
+    renderNational(DATA);
+    const presets = buildPresets(DATA);
+    renderPresets(presets);
+
+    const p = presets[0];
+    el.students.value = el.studentsNum.value = p.students;
+    el.rooms.value = p.rooms; el.poor.value = p.poor;
+    el.sen.value = p.sen; el.lang.value = p.lang; el.remote.value = p.remote;
+
+    Object.values(el).forEach(i => i && i.addEventListener('input', calc));
+    el.studentsNum.addEventListener('input', () => { el.students.value = el.studentsNum.value; calc(); });
+
+    document.addEventListener('eet:themechange', () => setTimeout(() => {
+      [chartBudget, chartTeacher].forEach(c => c && c.destroy());
+      initCharts(); calc();
+    }, 60));
+
+    calc();
+  }
+
+  document.readyState === 'loading'
+    ? document.addEventListener('DOMContentLoaded', boot) : boot();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "updated": "2026-09-13",
+    "note": "ตัวเลขที่ไม่มาจากตารางที่ 11 ของ สพฐ. แยกไฟล์นี้ไว้เพื่อไม่ให้ ETL ทับแหล่งอ้างอิง"
+  },
+  "facts": {
+    "budget_moe_2569": {
+      "value": 355014,
+      "unit": "ล้านบาท",
+      "label": "งบประมาณกระทรวงศึกษาธิการ ปี 2569 (หลังสภาปรับลด)",
+      "confidence": "high",
+      "as_of": "พ.ร.บ.งบประมาณรายจ่ายประจำปีงบประมาณ พ.ศ. 2569",
+      "note": "ร่าง/คำขอที่สื่ออ้างอิงบ่อยคือ 355,108 ล้านบาท และยังเป็นอันดับ 3 ของประเทศ หลังสภาปรับลดเหลือ 355,014.1474 ล้านบาท (ลด 94.3301 ล้านบาท)",
+      "draft_value": 355108,
+      "sources": [
+        {
+          "title": "สำนักงานปลัด ศธ. — งบประมาณปี 2569",
+          "url": "https://ops.moe.go.th/budget-moe69-30052025/"
+        },
+        {
+          "title": "แนวหน้า — งบ ศธ. หลังสภาปรับลด",
+          "url": "https://www.naewna.com/local/907460"
+        }
+      ]
+    },
+    "oosc_2566": {
+      "value": 1025514,
+      "unit": "คน",
+      "label": "เด็กและเยาวชนนอกระบบการศึกษา อายุ 3–18 ปี",
+      "confidence": "high",
+      "as_of": "ปีการศึกษา 2566 · กสศ.",
+      "note": "คิดเป็น 8.41% ของประชากรช่วงวัยนี้ 12,200,105 คน ไม่ใช่ตัวเลข ก.พ. 2568 ตามที่เคยระบุบนหน้าแรก ตัวเลขคงเหลือ ธ.ค. 2567 อยู่ที่ 982,304 คน",
+      "sources": [
+        {
+          "title": "กสศ. — ที่มาของตัวเลข 1.02 ล้านคน",
+          "url": "https://flexiblelearning.eef.or.th/infographic-number-102/"
+        },
+        {
+          "title": "ThaiPublica — รายงานสถานการณ์ กสศ.",
+          "url": "https://thaipublica.org/2024/06/eef-unveils-white-paper/"
+        }
+      ]
+    },
+    "new_dropouts_2568": {
+      "value": 189977,
+      "unit": "คน",
+      "label": "เด็กหลุดออกจากระบบรายใหม่ ปี 2568",
+      "confidence": "mid",
+      "as_of": "ปี 2568 · กสศ. อ้างใน Thai PBS Policy Watch",
+      "note": "จากยอด 603,095 คน ปี 2568 แบ่งเป็นกลุ่มเดิม 413,118 คน และกลุ่มใหม่ 189,977 คน เป็นตัวเลขภาพรวมของ กสศ. ไม่ใช่เฉพาะ สพฐ.",
+      "sources": [
+        {
+          "title": "Thai PBS Policy Watch — การศึกษาแบบยืดหยุ่น",
+          "url": "https://policywatch.thaipbs.or.th/article/education-58"
+        }
+      ]
+    },
+    "equity_scholarships_2569": {
+      "value": 1300000,
+      "unit": "คน",
+      "label": "นักเรียนยากจนพิเศษที่ กสศ. ตั้งเป้าให้ทุนเสมอภาค ปี 2569",
+      "confidence": "high",
+      "as_of": "ปีการศึกษา 2569",
+      "note": "เป้าหมายไม่น้อยกว่า 1.3 ล้านคน อัตรา 4,200 บาท/คน/ปี สำหรับ ป.–ม.ต้น อนุบาลได้ 4,000 บาท/คน/ปี",
+      "sources": [
+        {
+          "title": "The Active — ทุนเสมอภาคปี 2569",
+          "url": "https://theactive.thaipbs.or.th/news/learning-education-20260529"
+        },
+        {
+          "title": "ประชาชาติธุรกิจ — กสศ. จัดสรรทุนเสมอภาค",
+          "url": "https://www.prachachat.net/education/news-2013884"
+        }
+      ]
+    }
+  },
+  "laws": {
+    "constitution_2560": {
+      "title": "รัฐธรรมนูญแห่งราชอาณาจักรไทย พุทธศักราช 2560",
+      "url": "https://www.ratchakitcha.soc.go.th/DATA/PDF/2560/A/040/1.PDF",
+      "articles": "มาตรา 4, 27, 51, 54, 258 จ., 261"
+    },
+    "education_act_2542": {
+      "title": "พระราชบัญญัติการศึกษาแห่งชาติ พ.ศ. 2542",
+      "url": "https://www.onesqa.or.th/upload/download/file_975dff739ff5a909753b8bff237c78fa.pdf",
+      "articles": "มาตรา 9, 10, 17, 39, 47–51, 58, 60"
+    },
+    "education_act_amd4": {
+      "title": "พระราชบัญญัติการศึกษาแห่งชาติ (ฉบับที่ 4) พ.ศ. 2562",
+      "url": "https://www.moe.go.th/backend/wp-content/uploads/2020/10/5.-พระราชบัญญัติการศึกษาแห่งชาติ-พ.ศ.2542-ฉ.4.pdf",
+      "articles": "แก้ไขเพิ่มเติมถึงฉบับที่ 4"
+    },
+    "eef_act_2561": {
+      "title": "พระราชบัญญัติกองทุนเพื่อความเสมอภาคทางการศึกษา พ.ศ. 2561",
+      "url": "https://www.eef.or.th/wp-content/uploads/2022/04/eef-GovernmentGazette.pdf",
+      "articles": "มาตรา 5, 6, 8, 14, 18, 23, 24, 44"
+    }
+  },
+  "other": {
+    "pisa_2022": {
+      "title": "OECD — PISA 2022 Results (Volume I)",
+      "url": "https://www.oecd.org/en/publications/pisa-2022-results-volume-i_53f23881-en.html"
+    },
+    "eef_home": {
+      "title": "กองทุนเพื่อความเสมอภาคทางการศึกษา (กสศ.)",
+      "url": "https://www.eef.or.th/"
+    }
+  }
+}
