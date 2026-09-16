@@ -433,6 +433,20 @@ s{opacity:.55}
 .src-list span{display:block;color:var(--text-3);font-size:.82rem;margin-top:3px}
 
 /* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+.about-page{padding-bottom:72px}
+.about-body{max-width:76ch}
+.contact-card{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:26px 28px;margin:22px 0 26px}
+.contact-card .contact-role{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin:0 0 6px}
+.contact-card h3{font-size:1.28rem;margin:0 0 16px}
+.contact-card dl{margin:0;display:grid;gap:10px}
+.contact-card dl div{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:10px;align-items:baseline}
+.contact-card dt{font-size:.82rem;color:var(--text-3);font-weight:600}
+.contact-card dd{margin:0;font-size:.95rem}
+@media(max-width:520px){.contact-card dl div{grid-template-columns:1fr}}
+
+/* ============================================================
    SIMULATOR PAGE
    ============================================================ */
 .sim-shell{display:grid;grid-template-columns:380px 1fr;gap:32px;align-items:start}

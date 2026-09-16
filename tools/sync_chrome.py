@@ -49,6 +49,13 @@ PAGES = [
         "footer_extra": "",
     },
     {
+        "file": "about.html",
+        "nav": "about",
+        "footer": "inner",
+        "disclaimer": "เนื้อหาเพื่อการแลกเปลี่ยนเรียนรู้เชิงวิชาการ ไม่ใช่เอกสารราชการ",
+        "footer_extra": "",
+    },
+    {
         "file": "404.html",
         "nav": "",
         "footer": "inner",
@@ -63,6 +70,7 @@ SITEMAP_PATHS = [
     ("simulator.html", "0.8", "monthly"),
     ("gap-map.html", "0.8", "monthly"),
     ("resources.html", "0.7", "monthly"),
+    ("about.html", "0.6", "yearly"),
     ("dist/one-pager.pdf", "0.5", "yearly"),
     ("dist/executive-brief.pdf", "0.5", "yearly"),
     ("dist/wsf-deck.pptx", "0.4", "yearly"),
@@ -74,6 +82,7 @@ NAV_ITEMS = [
     ("simulator.html", "เครื่องมือจำลอง", "simulator", ""),
     ("gap-map.html", "แผนที่ช่องว่าง", "gap-map", ""),
     ("resources.html", "ทรัพยากร", "resources", "nav-cta"),
+    ("about.html", "เกี่ยวกับ", "about", ""),
 ]
 
 
