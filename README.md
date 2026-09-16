@@ -56,7 +56,7 @@ python -m http.server 8080
 
 ## เผยแพร่ (GitHub Pages)
 
-เว็บสาธารณะอยู่ที่ <https://burapatis.github.io/equity-edu-th/> จากรีโป [`burapatis/equity-edu-th`](https://github.com/burapatis/equity-edu-th) — ไม่ใช้รีโป `burapatis.github.io` เพราะที่นั่นเป็นเว็บ TBLF อยู่แล้ว
+เว็บสาธารณะอยู่ที่ <https://eet.thamdee.com/> จากรีโป [`burapatis/equity-edu-th`](https://github.com/burapatis/equity-edu-th) (ที่อยู่เดิม <https://burapatis.github.io/equity-edu-th/> ยังเปิดได้) — ไม่ใช้รีโป `burapatis.github.io` เพราะที่นั่นเป็นเว็บ TBLF อยู่แล้ว
 
 GitHub Pages เสิร์ฟไฟล์จากรากสาขา `main` (มี `.nojekyll` เพื่อไม่ให้ Jekyll กรองไฟล์) หลังแก้ `base_url` ให้รัน `python tools/sync_chrome.py` แล้วพุช
 

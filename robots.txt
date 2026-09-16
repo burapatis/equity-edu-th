@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://burapatis.github.io/equity-edu-th/sitemap.xml
+Sitemap: https://eet.thamdee.com/sitemap.xml

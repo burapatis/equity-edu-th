@@ -1,5 +1,5 @@
 {
-  "base_url": "https://burapatis.github.io/equity-edu-th",
+  "base_url": "https://eet.thamdee.com",
   "name": "Equity Education Thailand",
-  "note": "เมื่อผูกโดเมนจริง ให้เปลี่ยน base_url แล้วรัน python tools/sync_chrome.py"
+  "note": "ที่อยู่หลักคือโดเมนกำหนดเอง หลังแก้ base_url ให้รัน python tools/sync_chrome.py"
 }

@@ -467,6 +467,9 @@ input[type=number],select{width:100%;padding:11px 14px;border:1px solid var(--bo
 .delta-strip{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:18px 22px;border-radius:var(--radius);background:linear-gradient(135deg,var(--navy-800),var(--navy-700));color:#fff;margin-bottom:24px}
 .delta-strip b{font-family:'IBM Plex Sans',sans-serif;font-size:1.7rem;color:var(--amber-400)}
 .delta-strip span{font-size:.92rem;opacity:.9}
+.delta-strip.env{background:var(--bg-alt);color:var(--text);border:1px solid var(--border);margin-top:-12px}
+.delta-strip.env b{color:var(--accent);font-size:1.25rem}
+.delta-strip.env span{opacity:1;color:var(--text-2)}
 .chart-box{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:20px}
 .chart-box h4{font-size:.96rem;margin-bottom:14px}
 .chart-wrap{position:relative;height:270px}

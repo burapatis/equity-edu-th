@@ -7,20 +7,20 @@
 <meta name="description" content="เครื่องมือจำลองเปรียบเทียบการจัดสรรงบประมาณและอัตรากำลังครู ระหว่างสูตรรายหัวแบบเดิมกับสูตรถ่วงน้ำหนักตามความจำเป็น โดยใช้ข้อมูลจริงจาก สพฐ. ปีการศึกษา 2569">
 <!-- EET:CHROME-HEAD -->
 <meta name="theme-color" content="#1a2b4c">
-<link rel="canonical" href="https://burapatis.github.io/equity-edu-th/simulator.html">
+<link rel="canonical" href="https://eet.thamdee.com/simulator.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="th_TH">
-<meta property="og:url" content="https://burapatis.github.io/equity-edu-th/simulator.html">
+<meta property="og:url" content="https://eet.thamdee.com/simulator.html">
 <meta property="og:title" content="เครื่องมือจำลองสูตรจัดสรร (WSF Simulator) | ความเสมอภาคทางการศึกษาไทย">
 <meta property="og:description" content="เครื่องมือจำลองเปรียบเทียบการจัดสรรงบประมาณและอัตรากำลังครู ระหว่างสูตรรายหัวแบบเดิมกับสูตรถ่วงน้ำหนักตามความจำเป็น โดยใช้ข้อมูลจริงจาก สพฐ. ปีการศึกษา 2569">
-<meta property="og:image" content="https://burapatis.github.io/equity-edu-th/assets/img/og-image.png">
+<meta property="og:image" content="https://eet.thamdee.com/assets/img/og-image.png">
 <meta property="og:image:alt" content="97:3 ความเสมอภาคทางการศึกษาไทย">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="เครื่องมือจำลองสูตรจัดสรร (WSF Simulator) | ความเสมอภาคทางการศึกษาไทย">
 <meta name="twitter:description" content="เครื่องมือจำลองเปรียบเทียบการจัดสรรงบประมาณและอัตรากำลังครู ระหว่างสูตรรายหัวแบบเดิมกับสูตรถ่วงน้ำหนักตามความจำเป็น โดยใช้ข้อมูลจริงจาก สพฐ. ปีการศึกษา 2569">
-<meta name="twitter:image" content="https://burapatis.github.io/equity-edu-th/assets/img/og-image.png">
+<meta name="twitter:image" content="https://eet.thamdee.com/assets/img/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -60,6 +60,7 @@
 
 <main id="main">
 
+<!-- ═════════ INTRO ═════════ -->
 <section class="section" style="padding-bottom:34px">
   <div class="container">
     <span class="section-num">เครื่องมือเชิงนโยบาย</span>
@@ -72,6 +73,7 @@
   </div>
 </section>
 
+<!-- ═════════ NATIONAL SNAPSHOT ═════════ -->
 <section class="section section-alt" style="padding-top:44px">
   <div class="container">
     <header class="section-head" style="margin-bottom:28px">
@@ -82,6 +84,7 @@
   </div>
 </section>
 
+<!-- ═════════ SIMULATOR ═════════ -->
 <section class="section">
   <div class="container">
     <header class="section-head" style="margin-bottom:30px">
@@ -90,6 +93,8 @@
     </header>
 
     <div class="sim-shell">
+
+      <!-- ────── INPUTS ────── -->
       <aside class="panel panel-sticky">
         <h3>ปัจจัยของโรงเรียน</h3>
         <p class="panel-sub">ค่าตั้งต้นอ้างอิงจากค่าเฉลี่ยจริงรายชั้นของ สพฐ.</p>
@@ -101,30 +106,35 @@
           <span class="hint">ลากเพื่อปรับ หรือพิมพ์ค่าด้านล่าง</span>
           <input type="number" id="inStudentsNum" min="1" max="5000" value="48" style="margin-top:8px">
         </div>
+
         <div class="field">
           <label for="inRooms">จำนวนห้องเรียนที่ต้องเปิด <span class="val" id="vRooms">6 ห้อง</span></label>
           <input type="range" id="inRooms" min="1" max="60" step="1" value="6">
           <span class="hint">จำนวนชั้นเรียนตามหลักสูตร — ไม่ลดลงตามจำนวนเด็ก</span>
         </div>
+
         <div class="field">
           <label for="inPoor">สัดส่วนนักเรียนยากจนพิเศษ <span class="val" id="vPoor">60%</span></label>
           <input type="range" id="inPoor" min="0" max="100" step="1" value="60">
           <span class="hint">น้ำหนัก +0.50 ต่อคน</span>
         </div>
+
         <div class="field">
           <label for="inSen">สัดส่วนที่มีความต้องการพิเศษ <span class="val" id="vSen">5%</span></label>
           <input type="range" id="inSen" min="0" max="40" step="1" value="5">
-          <span class="hint">น้ำหนัก +1.20 ต่อคน</span>
+          <span class="hint">น้ำหนัก +1.20 ต่อคน — ค่ากลางของช่วง +0.80 ถึง +2.50 ในรายงานส่วนที่ 16</span>
         </div>
+
         <div class="field">
           <label for="inLang">สัดส่วนที่ภาษาแม่ไม่ใช่ภาษาไทย <span class="val" id="vLang">20%</span></label>
           <input type="range" id="inLang" min="0" max="100" step="1" value="20">
           <span class="hint">น้ำหนัก +0.30 ต่อคน</span>
         </div>
+
         <div class="field">
           <label for="inRemote">ระดับความห่างไกล <span class="val" id="vRemote">ระดับ 3</span></label>
           <input type="range" id="inRemote" min="1" max="5" step="1" value="3">
-          <span class="hint">1 = ในเขตเมือง · 5 = พื้นที่สูง/เกาะ/ชายแดน (ตัวคูณ 1.00–1.40)</span>
+          <span class="hint">1 = ในเขตเมือง (×1.00) · 5 = พื้นที่สูง/เกาะ/ชายแดน (×1.40) ตามรายงานส่วนที่ 16</span>
         </div>
 
         <details style="margin-top:8px">
@@ -146,6 +156,7 @@
         </details>
       </aside>
 
+      <!-- ────── OUTPUTS ────── -->
       <div>
         <div class="kpi-row">
           <div class="kpi old">
@@ -161,19 +172,24 @@
         </div>
 
         <div class="delta-strip">
-          <span>โรงเรียนนี้จะได้รับงบต่อหัว</span>
+          <span>ถ้าไม่จำกัดวงเงิน โรงเรียนนี้จะได้รับงบต่อหัว</span>
           <b id="outDelta">+0%</b>
           <span id="outDeltaWord">เมื่อเปลี่ยนไปใช้สูตร WSF</span>
+        </div>
+        <div class="delta-strip env" id="outEnvStrip">
+          <span>ในกรอบที่โรงเรียนอ้างอิง 500 คนในเมืองได้เท่าสูตรเดิม โรงเรียนนี้จะได้</span>
+          <b id="outEnvDelta">+0%</b>
+          <span id="outEnvWord">เทียบสูตรเดิมของโรงเรียนนี้</span>
         </div>
 
         <div class="chart-box">
           <h4>📊 เปรียบเทียบงบประมาณต่อหัว</h4>
-          <div class="chart-wrap"><canvas id="chartBudget" role="img" aria-label="เปรียบเทียบงบประมาณต่อหัวระหว่างสูตรรายหัวกับสูตร WSF"></canvas></div>
+          <div class="chart-wrap"><canvas id="chartBudget"></canvas></div>
         </div>
 
         <div class="chart-box">
           <h4>👩‍🏫 ความต้องการครู — กฎเดิม vs กฎที่เสนอ</h4>
-          <div class="chart-wrap"><canvas id="chartTeacher" role="img" aria-label="เปรียบเทียบความต้องการครูระหว่างกฎรายหัวกับกฎห้องเรียน"></canvas></div>
+          <div class="chart-wrap"><canvas id="chartTeacher"></canvas></div>
           <div class="gapbar" id="gapBar"></div>
           <p id="teacherNote" style="font-size:.88rem;color:var(--text-2);margin:0"></p>
         </div>
@@ -183,20 +199,137 @@
           <table class="breakdown" id="tblBreak"></table>
         </div>
 
+        <!-- ════ ที่มาของค่าน้ำหนัก (ใหม่) ════ -->
+        <div class="chart-box">
+          <h4>📐 ที่มาของค่าน้ำหนักแต่ละตัว</h4>
+          <p style="font-size:.86rem;color:var(--text-3);margin:-6px 0 14px">
+            ความโปร่งใสเชิงวิธีวิทยา — ตัวเลขใดมีฐานรองรับ ตัวเลขใดยังไม่มี
+          </p>
+          <table class="breakdown">
+            <thead><tr><th>พารามิเตอร์</th><th>ค่าปัจจุบัน</th><th>ที่มาและสถานะ</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>เงินฐานต่อหัว</td>
+                <td id="srcBase">6,000</td>
+                <td><span class="conf conf-mid">สาธิต</span> ต้องได้จาก Resource Cost Model (ชั้นที่ 1)</td>
+              </tr>
+              <tr>
+                <td>Fixed Cost Floor</td>
+                <td id="srcFixed">350,000</td>
+                <td><span class="conf conf-mid">สาธิต</span> ต้องได้จาก Resource Cost Model (ชั้นที่ 1)</td>
+              </tr>
+              <tr>
+                <td>น้ำหนักความยากจน</td>
+                <td>+0.50</td>
+                <td><span class="conf conf-mid">สาธิต</span> วรรณกรรมสากลมักได้ค่า<b>สูงกว่านี้มาก</b></td>
+              </tr>
+              <tr>
+                <td>น้ำหนักความต้องการพิเศษ</td>
+                <td>+1.20</td>
+                <td><span class="conf conf-mid">สาธิต</span> ควรแยกตามระดับความต้องการ 3 ระดับ</td>
+              </tr>
+              <tr>
+                <td>น้ำหนักด้านภาษา</td>
+                <td>+0.30</td>
+                <td><span class="conf conf-mid">สาธิต</span> ต้องประมาณจากข้อมูลจริง</td>
+              </tr>
+              <tr>
+                <td>ตัวคูณความห่างไกล</td>
+                <td>1.00–1.40</td>
+                <td><span class="conf conf-mid">สาธิต</span> ต้องสร้างดัชนีจากข้อมูล GIS</td>
+              </tr>
+              <tr>
+                <td>จำนวนนักเรียน / ห้องเรียน</td>
+                <td id="srcData">ข้อมูลจริง</td>
+                <td><span class="conf conf-high">ข้อมูลจริง</span> สพฐ. ปีการศึกษา 2569</td>
+              </tr>
+              <tr class="sum">
+                <td colspan="3" style="text-align:left;font-weight:400;font-size:.85rem;color:var(--text-2);line-height:1.7">
+                  ⚠️ <b>ค่าน้ำหนักทั้งหมดยังไม่ผ่านการสอบเทียบ</b> — วิธีการที่ถูกต้องในการกำหนดค่าเหล่านี้
+                  อธิบายไว้ใน <a href="report.html#sA"><b>ภาคผนวก ก: Cost Function Analysis</b></a><br>
+                  📌 การเปิดเผยสถานะนี้ต่อสาธารณะเป็นไปตามหลัก <em>“รายงานสิ่งที่ยังไม่รู้ก่อนถูกถาม”</em>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
         <div class="datasrc" id="dataSrc">กำลังโหลดข้อมูลต้นทาง…</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═════════ WHY CFA MATTERS ═════════ -->
 <section class="section section-alt">
   <div class="container">
-    <div class="callout callout-warn">
+    <header class="section-head" style="margin-bottom:26px">
+      <h2>ทำไมค่าน้ำหนักจึงสำคัญกว่าที่คิด</h2>
+      <p class="section-sub">เส้นโค้งต้นทุนตามขนาดโรงเรียน — การคำนวณเชิงสาธิตจากภาคผนวก ก</p>
+    </header>
+
+    <div class="table-scroll" style="margin-bottom:24px">
+      <table class="data-table">
+        <thead><tr><th>ขนาดโรงเรียน</th><th>ต้นทุนรวมต่อหัว</th><th>ดัชนีต้นทุน</th><th>ได้รับจริง (สูตรเดิม)</th></tr></thead>
+        <tbody>
+          <tr class="row-hot"><td><b>48 คน</b> <small>(6 ชั้น × 8 คน)</small></td><td><b>13,292 บาท</b></td><td><b>1.98</b></td><td>6,000 บาท <b style="color:var(--red-600)">(45%)</b></td></tr>
+          <tr><td>88 คน <small>(ค่าเฉลี่ย สพป.)</small></td><td>9,977 บาท</td><td>1.49</td><td>6,000 บาท <b style="color:var(--red-600)">(60%)</b></td></tr>
+          <tr><td>300 คน</td><td>7,167 บาท</td><td>1.07</td><td>6,000 บาท (84%)</td></tr>
+          <tr><td><b>500 คน</b> <small>(อ้างอิง)</small></td><td>6,700 บาท</td><td>1.00</td><td>6,000 บาท (90%)</td></tr>
+          <tr><td>1,200 คน</td><td>6,292 บาท</td><td>0.94</td><td>6,000 บาท <b style="color:var(--green-600)">(95%)</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-danger" style="margin-top:0">
+      <div class="callout-icon">💥</div>
+      <div>
+        <h4>ข้อค้นพบที่อธิบายกับดักโรงเรียนขนาดเล็กทั้งหมด</h4>
+        <p>
+          โรงเรียน 48 คน มีต้นทุนต่อหัวสูงกว่าโรงเรียน 500 คน <strong>เกือบ 2 เท่า</strong>
+          แต่ระบบปัจจุบันให้เงินต่อหัว <strong>เท่ากันทุกโรงเรียน</strong>
+        </p>
+        <p style="margin-top:10px;font-size:1.04rem">
+          <mark>โรงเรียนขนาดเล็กได้รับงบเพียงราวครึ่งหนึ่งของต้นทุนที่แท้จริง ทุกปีงบประมาณ ต่อเนื่องมาหลายสิบปี</mark>
+        </p>
+        <p style="margin-top:12px;font-size:.86rem;color:var(--text-2)">
+          🟡 <em>เป็นการคำนวณเชิงสาธิตจากค่าสมมติ (ต้นทุนคงที่ 350,000 บาท/โรงเรียน/ปี · แปรผัน 6,000 บาท/คน/ปี)
+          แต่รูปทรงของเส้นโค้งเป็นสิ่งที่วรรณกรรมสากลยืนยันตรงกันทุกการศึกษา</em>
+        </p>
+        <p style="margin-top:14px">
+          <a href="report.html#sA" class="btn btn-sm">อ่านภาคผนวก ก: Cost Function Analysis →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ CAVEAT ═════════ -->
+<section class="section">
+  <div class="container">
+    <div class="callout callout-warn" style="margin-top:0">
       <div class="callout-icon">⚠️</div>
       <div>
         <h4>ข้อจำกัดที่ต้องทราบก่อนนำผลไปใช้</h4>
-        <p>ค่าน้ำหนักทั้งหมดในเครื่องมือนี้เป็น <strong>ตัวเลขเพื่อการอภิปรายเชิงกลไก</strong> ยังไม่ใช่ค่าที่ผ่านการสอบเทียบ — ค่าที่ใช้ได้จริงต้องมาจาก <em>Cost Function Analysis</em> ของต้นทุนการจัดการศึกษารายประเภทโรงเรียน</p>
-        <p style="margin-top:10px">นอกจากนี้ ข้อมูลต้นทางเป็น <strong>ค่ารวมระดับประเทศ</strong> จึงไม่สะท้อนการกระจายรายโรงเรียน — ช่องว่างที่แท้จริงในโรงเรียนขนาดเล็กรายแห่ง <strong>ย่อมรุนแรงกว่าค่าเฉลี่ยที่แสดง</strong></p>
+        <ol style="margin:10px 0 0;padding-left:20px;font-size:.94rem;color:var(--text-2)">
+          <li style="margin-bottom:9px">
+            <strong>ค่าน้ำหนักทั้งหมดเป็นตัวเลขเพื่อการอภิปรายเชิงกลไก</strong> ยังไม่ผ่านการสอบเทียบ
+            — ค่าที่ใช้ได้จริงต้องมาจาก <em>Cost Function Analysis</em> ตามที่อธิบายใน
+            <a href="report.html#sA">ภาคผนวก ก</a>
+          </li>
+          <li style="margin-bottom:9px">
+            <strong>ข้อมูลต้นทางเป็นค่ารวมระดับประเทศ</strong> จึงไม่สะท้อนการกระจายรายโรงเรียน
+            — ช่องว่างที่แท้จริงในโรงเรียนขนาดเล็กรายแห่ง <em>ย่อมรุนแรงกว่าค่าเฉลี่ยที่แสดง</em>
+          </li>
+          <li style="margin-bottom:9px">
+            <strong>อัตราครูอ้างอิง 1:20 เป็นเกณฑ์เพื่อการสาธิต</strong>
+            — เกณฑ์อัตรากำลังจริงของ ก.ค.ศ. จำแนกตามขนาดสถานศึกษาและมีรายละเอียดมากกว่านี้
+          </li>
+          <li>
+            <strong>เครื่องมือนี้แสดง “ศักยภาพเชิงเลขคณิต” ไม่ใช่ “ความเป็นไปได้ทางปฏิบัติ”</strong>
+            — การเปลี่ยนสูตรจริงต้องผ่านการวิเคราะห์ผลกระทบทางการคลังและแผนเปลี่ยนผ่านแบบ hold-harmless
+          </li>
+        </ol>
       </div>
     </div>
   </div>
@@ -208,7 +341,7 @@
 <footer class="site-footer">
   <div class="container footer-bottom">
     <p>© 2569 Equity Education Thailand · <a href="index.html">กลับหน้าแรก</a> · เนื้อหา <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.th" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> · โค้ด <a href="LICENSE">MIT</a></p>
-    <p class="disclaimer">ข้อมูลนักเรียนและห้องเรียนจาก สพฐ. ปีการศึกษา 2569 · ค่าน้ำหนักเป็นตัวเลขสาธิต</p>
+    <p class="disclaimer">ข้อมูลนักเรียนและห้องเรียนจาก สพฐ. ปีการศึกษา 2569 · ค่าน้ำหนักเป็นตัวเลขสาธิตที่ยังไม่ผ่านการสอบเทียบ</p>
   </div>
 </footer>
 <!-- /EET:FOOTER -->
@@ -223,25 +356,23 @@
   const $ = s => document.querySelector(s);
   const fmt = window.EET.fmt;
 
+  /* ---------- ค่าน้ำหนักของสูตร (ยังไม่ผ่านการสอบเทียบ — ดู ภาคผนวก ก) ---------- */
   const W = { poor: 0.50, sen: 1.20, lang: 0.30 };
   const REMOTE = { 1:1.00, 2:1.10, 3:1.20, 4:1.30, 5:1.40 };
-  const REMOTE_LABEL = { 1:'ระดับ 1 — ในเขตเมือง', 2:'ระดับ 2 — ชานเมือง',
-    3:'ระดับ 3 — ชนบททั่วไป', 4:'ระดับ 4 — ห่างไกล', 5:'ระดับ 5 — พื้นที่สูง/เกาะ/ชายแดน' };
+  const REMOTE_LABEL = {
+    1:'ระดับ 1 — ในเขตเมือง', 2:'ระดับ 2 — ชานเมือง', 3:'ระดับ 3 — ชนบททั่วไป',
+    4:'ระดับ 4 — ห่างไกล', 5:'ระดับ 5 — พื้นที่สูง/เกาะ/ชายแดน'
+  };
 
   const el = {
     students:$('#inStudents'), studentsNum:$('#inStudentsNum'), rooms:$('#inRooms'),
     poor:$('#inPoor'), sen:$('#inSen'), lang:$('#inLang'), remote:$('#inRemote'),
     base:$('#inBase'), fixed:$('#inFixed'), ratio:$('#inRatio')
   };
+
   let chartBudget = null, chartTeacher = null, DATA = null, RATIO = 20;
 
-  function gaps(d) {
-    return d.national.filter(u => u.key !== 'total' && u.classrooms).map(u => {
-      const a = u.students / RATIO, b = u.classrooms;
-      return { ...u, spr: u.students / u.classrooms, ruleA: a, ruleB: b, gap: b - a };
-    });
-  }
-
+  /* ---------- กราฟ ---------- */
   function initCharts() {
     const c = window.EET.chartColors();
     const common = {
@@ -266,45 +397,75 @@
     });
   }
 
+  /* ---------- การคำนวณหลัก ---------- */
   function calc() {
-    const s = Math.max(1, +el.students.value);
+    const s     = Math.max(1, +el.students.value);
     const rooms = Math.max(1, +el.rooms.value);
-    const p = +el.poor.value/100, sen = +el.sen.value/100, lang = +el.lang.value/100;
-    const rLvl = +el.remote.value, base = +el.base.value, fixed = +el.fixed.value, ratio = +el.ratio.value;
-    const mult = REMOTE[rLvl];
+    const p     = +el.poor.value / 100;
+    const sen   = +el.sen.value / 100;
+    const lang  = +el.lang.value / 100;
+    const rLvl  = +el.remote.value;
+    const base  = +el.base.value;
+    const fixed = +el.fixed.value;
+    const ratio = +el.ratio.value;
+    const mult  = REMOTE[rLvl];
 
+    /* --- ป้ายกำกับ --- */
     $('#vStudents').textContent = fmt(s) + ' คน';
-    $('#vRooms').textContent = rooms + ' ห้อง';
-    $('#vPoor').textContent = el.poor.value + '%';
-    $('#vSen').textContent = el.sen.value + '%';
-    $('#vLang').textContent = el.lang.value + '%';
-    $('#vRemote').textContent = REMOTE_LABEL[rLvl];
-    $('#vBase').textContent = fmt(base);
-    $('#vFixed').textContent = fmt(fixed);
-    $('#vRatio').textContent = ratio;
+    $('#vRooms').textContent    = rooms + ' ห้อง';
+    $('#vPoor').textContent     = el.poor.value + '%';
+    $('#vSen').textContent      = el.sen.value + '%';
+    $('#vLang').textContent     = el.lang.value + '%';
+    $('#vRemote').textContent   = REMOTE_LABEL[rLvl];
+    $('#vBase').textContent     = fmt(base);
+    $('#vFixed').textContent    = fmt(fixed);
+    $('#vRatio').textContent    = ratio;
     if (el.studentsNum.value !== String(s)) el.studentsNum.value = s;
 
+    /* --- ซิงก์ตาราง "ที่มาของค่าน้ำหนัก" --- */
+    const sb = $('#srcBase'), sf = $('#srcFixed');
+    if (sb) sb.textContent = fmt(base);
+    if (sf) sf.textContent = fmt(fixed);
+
+    /* --- สูตรเดิม --- */
     const oldTotal = s * base;
-    const wPoor = s*p*W.poor, wSen = s*sen*W.sen, wLang = s*lang*W.lang;
+
+    /* --- สูตร WSF --- */
+    const wPoor = s * p    * W.poor;
+    const wSen  = s * sen  * W.sen;
+    const wLang = s * lang * W.lang;
     const weighted = s + wPoor + wSen + wLang;
     const newTotal = fixed + weighted * base * mult;
 
-    const oldPer = oldTotal/s, newPer = newTotal/s;
-    $('#outOldPer').innerHTML = fmt(oldPer) + '<small>บาท/คน/ปี</small>';
-    $('#outNewPer').innerHTML = fmt(newPer) + '<small>บาท/คน/ปี</small>';
+    /* --- KPI --- */
+    const oldPer = oldTotal / s, newPer = newTotal / s;
+    $('#outOldPer').innerHTML   = fmt(oldPer) + '<small>บาท/คน/ปี</small>';
+    $('#outNewPer').innerHTML   = fmt(newPer) + '<small>บาท/คน/ปี</small>';
     $('#outOldTotal').textContent = fmt(oldTotal);
     $('#outNewTotal').textContent = fmt(newTotal);
 
-    const d = (newPer/oldPer - 1) * 100;
-    $('#outDelta').textContent = (d>=0?'+':'') + d.toFixed(0) + '%';
+    const d = (newPer / oldPer - 1) * 100;
+    $('#outDelta').textContent = (d >= 0 ? '+' : '') + d.toFixed(0) + '%';
     $('#outDeltaWord').textContent = d >= 0
-      ? 'มากกว่าเดิม เมื่อใช้สูตร WSF'
+      ? 'มากกว่าเดิม เมื่อใช้สูตร WSF โดยไม่จำกัดวงเงิน'
       : 'น้อยกว่าเดิม — โรงเรียนกลุ่มนี้ได้รับเกินความจำเป็นในสูตรเดิม';
+
+    const REF = 500;
+    const refOld = REF * base;
+    const refNew = fixed + REF * base;
+    const scale = refNew > 0 ? refOld / refNew : 1;
+    const envPer = (newTotal * scale) / s;
+    const dEnv = oldPer > 0 ? (envPer / oldPer - 1) * 100 : 0;
+    $('#outEnvDelta').textContent = (dEnv >= 0 ? '+' : '') + dEnv.toFixed(0) + '%';
+    $('#outEnvWord').textContent = dEnv >= 0
+      ? 'มากกว่าสูตรเดิมของโรงเรียนนี้ (โรงเรียนใหญ่ที่ไม่มีน้ำหนักเพิ่มจะได้น้อยลง)'
+      : 'น้อยกว่าสูตรเดิม — เป็นผู้เสียเปรียบเมื่อไม่เพิ่มวงเงิน';
 
     chartBudget.data.datasets[0].data = [oldPer, newPer];
     chartBudget.update('none');
 
-    const tOld = s/ratio, tNew = rooms, gap = tNew - tOld;
+    /* --- อัตรากำลังครู --- */
+    const tOld = s / ratio, tNew = rooms, gap = tNew - tOld;
     chartTeacher.data.datasets[0].data = [tOld, tNew];
     chartTeacher.update('none');
 
@@ -321,6 +482,7 @@
       : `ภายใต้เกณฑ์เดิม โรงเรียนนี้ได้ครู <b>${tOld.toFixed(1)} คน</b> สำหรับ <b>${rooms} ห้อง</b>
          — เพียงพอ และมีส่วนเกิน <b>${Math.abs(gap).toFixed(1)} อัตรา</b>`;
 
+    /* --- การแยกองค์ประกอบ --- */
     $('#tblBreak').innerHTML = `
       <thead><tr><th>องค์ประกอบ</th><th>วิธีคำนวณ</th><th>บาท/ปี</th></tr></thead>
       <tbody>
@@ -330,24 +492,25 @@
         <tr><td>④ น้ำหนักความต้องการพิเศษ</td><td>${fmt(s*sen)} คน × +${W.sen}</td><td>${fmt(wSen*base*mult)}</td></tr>
         <tr><td>⑤ น้ำหนักด้านภาษา</td><td>${fmt(s*lang)} คน × +${W.lang}</td><td>${fmt(wLang*base*mult)}</td></tr>
         <tr><td>⑥ ตัวคูณบริบทพื้นที่</td><td>${REMOTE_LABEL[rLvl]} (× ${mult.toFixed(2)})</td><td>รวมในข้อ ②–⑤</td></tr>
-        <tr class="sum"><td colspan="2">รวมงบตามสูตร WSF</td><td>${fmt(newTotal)}</td></tr>
+        <tr><td>⑦ แรงจูงใจเชื่อมผลลัพธ์</td><td>ชั้นที่ 4 ในรายงานส่วนที่ 16</td><td>ยังไม่คำนวณ</td></tr>
+        <tr class="sum"><td colspan="2">รวมงบตามสูตร WSF (ไม่จำกัดวงเงิน)</td><td>${fmt(newTotal)}</td></tr>
       </tbody>`;
   }
 
+  /* ---------- แผงข้อมูลระดับประเทศ ---------- */
   function renderNational(d) {
-    const g = gaps(d);
     const a = window.EET.analyse(d);
     const prim = a.core.primary;
     const sec  = a.core.secondary;
     const gt = d.grand_total || {
-      students: g.reduce((s,x)=>s+x.students,0),
-      classrooms: g.reduce((s,x)=>s+x.classrooms,0)
+      students: a.all.list.reduce((s,x)=>s+x.students,0),
+      classrooms: a.all.list.reduce((s,x)=>s+x.classrooms,0)
     };
-    const gtSpr = (gt.students/gt.classrooms).toFixed(1);
+    const gtSpr = (gt.students / gt.classrooms).toFixed(1);
 
-    const rows = g.map(t => `
+    const rows = a.all.list.map(t => `
       <tr>
-        <td><b>${t.name_th}</b>${window.EET.CORE_KEYS.includes(t.key) ? '' : ' <span class="lv">บริบทพิเศษ</span>'}</td>
+        <td><b>${t.name_th}</b></td>
         <td style="text-align:right">${fmt(t.students)}</td>
         <td style="text-align:right">${fmt(t.classrooms)}</td>
         <td style="text-align:right"><b style="color:${t.spr<RATIO?'var(--red-600)':'var(--green-600)'}">${t.spr.toFixed(1)}</b></td>
@@ -361,12 +524,12 @@
         <div class="stat"><div class="stat-num">${sec.spr.toFixed(1)}<small>คน/ห้อง</small></div>
           <div class="stat-label">มัธยมศึกษา (สพม.)</div>
           <div class="stat-meta"><span class="conf conf-high">ข้อมูลจริง</span> ${fmt(sec.students)} คน</div></div>
-        <div class="stat is-alert"><div class="stat-num">${fmt(prim.gap)}<small>อัตรา</small></div>
+        <div class="stat is-alert"><div class="stat-num">${fmt(a.core.deficit)}<small>อัตรา</small></div>
           <div class="stat-label"><strong>สพป. ขาดครู</strong> เมื่อเทียบกับจำนวนห้องเรียน</div>
-          <div class="stat-meta">คำนวณที่เกณฑ์ 1:${RATIO}</div></div>
-        <div class="stat"><div class="stat-num">${fmt(Math.abs(sec.gap))}<small>อัตรา</small></div>
+          <div class="stat-meta">ระบบหลัก · เกณฑ์ 1:${RATIO}</div></div>
+        <div class="stat"><div class="stat-num">${fmt(a.core.surplus)}<small>อัตรา</small></div>
           <div class="stat-label"><strong>สพม. มีส่วนเกิน</strong> เมื่อเทียบกับจำนวนห้องเรียน</div>
-          <div class="stat-meta">คำนวณที่เกณฑ์ 1:${RATIO}</div></div>
+          <div class="stat-meta">สุทธิระบบหลักขาด ${fmt(a.core.net)} อัตรา</div></div>
       </div>
 
       <div class="table-scroll" style="margin-bottom:24px">
@@ -389,31 +552,37 @@
         <div>
           <h4>ข้อค้นพบสำคัญจากข้อมูลจริง</h4>
           <p>ระบบหลัก (สพป./สพม.) ขาดสุทธิราว <b>${fmt(a.core.net)} อัตรา</b> — เกิดจาก
-            <b>การขาด ${fmt(a.core.deficit)} อัตราที่ สพป.</b> ที่ถูกกลบด้วย <b>ส่วนเกิน ${fmt(a.core.surplus)} อัตราใน สพม.</b></p>
-          <p style="margin-top:10px">หากใช้โมเดล 1:20 กับทุกประเภท รวมการศึกษาพิเศษ จะได้ขาด ${fmt(a.all.deficit)} สุทธิ ${fmt(a.all.net)} แต่กลุ่มนั้นมีนักเรียนต่อห้อง 2.7–3.9 โดยเจตนา ไม่ควรอ่านเป็นความขาดแบบเดียวกับ สพป.</p>
-          <p style="margin-top:10px;font-size:1.02rem"><mark>ปัญหาของเราคือ “การกระจาย” ไม่ใช่ “จำนวน”</mark></p>
-          <p style="margin-top:14px"><a href="gap-map.html" class="btn btn-sm">ดูรายละเอียดในแผนที่ช่องว่าง →</a></p>
+            <b>การขาด ${fmt(a.core.deficit)} อัตราที่ สพป.</b> ที่ถูกกลบด้วย
+            <b>ส่วนเกิน ${fmt(a.core.surplus)} อัตราใน สพม.</b></p>
+          <p style="margin-top:10px;font-size:.94rem;color:var(--text-2)">หากใช้โมเดล 1:${RATIO} กับทุกประเภท รวมการศึกษาพิเศษ จะได้ขาด <b>${fmt(a.all.deficit)}</b> สุทธิ <b>${fmt(a.all.net)}</b> แต่กลุ่มนั้นมีนักเรียนต่อห้องต่ำโดยเจตนา ไม่ควรอ่านเป็นความขาดแบบเดียวกับ สพป.</p>
+          <p style="margin-top:10px;font-size:1.02rem"><mark>ปัญหาของระบบหลักคือ “การกระจาย” ไม่ใช่ “จำนวน”</mark></p>
+          <p style="margin-top:14px">
+            <a href="gap-map.html" class="btn btn-sm">ดูรายละเอียดในแผนที่ช่องว่าง →</a>
+          </p>
         </div>
       </div>`;
 
     $('#dataSrc').innerHTML =
       `<b>แหล่งข้อมูล:</b> ${d.meta.title}<br>
        <b>หน่วยงาน:</b> ${d.meta.source} · ปีการศึกษา ${d.meta.academic_year}<br>
-       <b>ขอบเขต:</b> ${d.meta.coverage_note}`;
+       <b>ขอบเขต:</b> ${d.meta.coverage_note}<br>
+       <b>ค่าน้ำหนัก:</b> ยังไม่ผ่านการสอบเทียบ — ดู
+       <a href="report.html#sA">ภาคผนวก ก: Cost Function Analysis</a>`;
   }
 
+  /* ---------- Presets ---------- */
   function buildPresets(d) {
     const lv = name => {
-      const g = d.grades.filter(x => (x.level||'').includes(name) && x.classrooms);
-      return g.length ? g.reduce((s,x)=>s+x.students/x.classrooms,0)/g.length : 15;
+      const g = d.grades.filter(x => (x.level || '').includes(name) && x.classrooms);
+      return g.length ? g.reduce((s,x)=>s + x.students/x.classrooms, 0) / g.length : 15;
     };
     const primSPR = lv('ประถม');
     return [
-      { name:'โรงเรียนเล็กบนดอย', rooms:6,  students:48,                        poor:85, sen:4, lang:90, remote:5 },
-      { name:'โรงเรียนเล็กชนบท',  rooms:6,  students:Math.round(6*primSPR*.6),  poor:65, sen:5, lang:25, remote:4 },
-      { name:'ประถมขนาดเฉลี่ย',   rooms:6,  students:Math.round(6*primSPR),     poor:45, sen:5, lang:12, remote:3 },
-      { name:'มัธยมขนาดกลาง',     rooms:18, students:Math.round(18*30),         poor:30, sen:3, lang:6,  remote:2 },
-      { name:'โรงเรียนใหญ่ในเมือง',rooms:36, students:Math.round(36*38),        poor:12, sen:2, lang:2,  remote:1 }
+      { name:'โรงเรียนเล็กบนดอย',   rooms:6,  students:48,                       poor:85, sen:4, lang:90, remote:5 },
+      { name:'โรงเรียนเล็กชนบท',    rooms:6,  students:Math.round(6*primSPR*.6), poor:65, sen:5, lang:25, remote:4 },
+      { name:'ประถมขนาดเฉลี่ย',     rooms:6,  students:Math.round(6*primSPR),    poor:45, sen:5, lang:12, remote:3 },
+      { name:'มัธยมขนาดกลาง',       rooms:18, students:Math.round(18*30),        poor:30, sen:3, lang:6,  remote:2 },
+      { name:'โรงเรียนใหญ่ในเมือง', rooms:36, students:Math.round(36*38),        poor:12, sen:2, lang:2,  remote:1 }
     ];
   }
 
@@ -426,12 +595,16 @@
       b.classList.add('is-on');
       const p = list[+b.dataset.i];
       el.students.value = el.studentsNum.value = p.students;
-      el.rooms.value = p.rooms; el.poor.value = p.poor;
-      el.sen.value = p.sen; el.lang.value = p.lang; el.remote.value = p.remote;
+      el.rooms.value  = p.rooms;
+      el.poor.value   = p.poor;
+      el.sen.value    = p.sen;
+      el.lang.value   = p.lang;
+      el.remote.value = p.remote;
       calc();
     });
   }
 
+  /* ---------- Boot ---------- */
   async function boot() {
     DATA = await window.EET.loadData();
     RATIO = (DATA.meta && DATA.meta.teacher_ratio) || 20;
@@ -439,27 +612,36 @@
 
     initCharts();
     renderNational(DATA);
+
     const presets = buildPresets(DATA);
     renderPresets(presets);
 
     const p = presets[0];
     el.students.value = el.studentsNum.value = p.students;
-    el.rooms.value = p.rooms; el.poor.value = p.poor;
-    el.sen.value = p.sen; el.lang.value = p.lang; el.remote.value = p.remote;
+    el.rooms.value  = p.rooms;
+    el.poor.value   = p.poor;
+    el.sen.value    = p.sen;
+    el.lang.value   = p.lang;
+    el.remote.value = p.remote;
 
     Object.values(el).forEach(i => i && i.addEventListener('input', calc));
-    el.studentsNum.addEventListener('input', () => { el.students.value = el.studentsNum.value; calc(); });
+    el.studentsNum.addEventListener('input', () => {
+      el.students.value = el.studentsNum.value;
+      calc();
+    });
 
     document.addEventListener('eet:themechange', () => setTimeout(() => {
       [chartBudget, chartTeacher].forEach(c => c && c.destroy());
-      initCharts(); calc();
+      initCharts();
+      calc();
     }, 60));
 
     calc();
   }
 
   document.readyState === 'loading'
-    ? document.addEventListener('DOMContentLoaded', boot) : boot();
+    ? document.addEventListener('DOMContentLoaded', boot)
+    : boot();
 })();
 </script>
 </body>
