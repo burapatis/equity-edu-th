@@ -61,6 +61,17 @@ python -m http.server 8080
 
 GitHub Pages เสิร์ฟไฟล์จากรากสาขา `main` (มี `.nojekyll` เพื่อไม่ให้ Jekyll กรองไฟล์) หลังแก้ `base_url` ให้รัน `python tools/sync_chrome.py` แล้วพุช
 
+ข้อมูลนักเรียนในเครื่องมือจำลองและแผนที่ช่องว่างมาจาก `assets/data/school-data.json` ที่ commit ไว้ รัน ETL ในเครื่องแล้วพุชไฟล์นี้ขึ้น `main` ไซต์จะอัปเดตหลัง Actions เสร็จ
+
+```bash
+python tools/etl_students.py 11.xlsx --report --out assets/data/school-data.json
+git add assets/data/school-data.json 11.xlsx
+git commit -m "Update school data from the new OBEC table."
+git push origin main
+```
+
+ตอน deploy นั้น GitHub Actions จะติดตั้งฟอนต์ไทย แล้วรัน `python tools/build_docs.py --all` เพื่อสร้าง `dist/wsf-deck.pptx`, `dist/executive-brief.pdf` และ `dist/one-pager.pdf` จาก JSON ล่าสุด ก่อนอัปโหลดขึ้น Pages — ไม่รัน ETL บน CI
+
 หน้า `404.html` ใส่ `<base href>` ตาม path ของไซต์ เพื่อให้สไตล์และเมนูทำงานแม้ URL ที่ผิดจะอยู่ลึกกว่าโฟลเดอร์โปรเจกต์
 
 ### Cloudflare Pages (ทางเลือก)

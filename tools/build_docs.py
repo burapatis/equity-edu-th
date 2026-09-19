@@ -36,6 +36,8 @@ ROOT = Path(__file__).resolve().parent.parent
 FONT_DIRS = [
     Path(__file__).resolve().parent / "fonts",
     Path("/usr/share/fonts/truetype/sarabun"),
+    Path("/usr/share/fonts/truetype/tlwg"),
+    Path("/usr/share/fonts/truetype/noto"),
     Path("/usr/share/fonts/truetype/thai"),
     Path("/Library/Fonts"),
     Path.home() / "Library/Fonts",
@@ -1131,7 +1133,7 @@ def _find_fonts(font_dir: Path | None) -> dict:
     from reportlab.pdfbase.ttfonts import TTFont
 
     cands = {
-        "r": ["Sarabun-Regular.ttf", "NotoSansThai-Regular.ttf",
+        "r": ["Sarabun-Regular.ttf", "Sarabun.ttf", "NotoSansThai-Regular.ttf",
               "THSarabunNew.ttf", "Kanit-Regular.ttf", "tahoma.ttf"],
         "b": ["Sarabun-Bold.ttf", "NotoSansThai-Bold.ttf",
               "THSarabunNew Bold.ttf", "Kanit-Bold.ttf", "tahomabd.ttf"],

@@ -150,9 +150,9 @@
         <thead><tr><th>ขั้นตอน</th><th>คำสั่ง</th><th>ผลลัพธ์</th></tr></thead>
         <tbody>
           <tr><td><b>1. ติดตั้ง</b></td><td><code>pip install -r tools/requirements.txt</code></td><td>ติดตั้ง pandas, openpyxl, python-pptx, reportlab</td></tr>
-          <tr><td><b>2. ฟอนต์</b></td><td>มี <code>Sarabun-*.ttf</code> ใน <code>tools/fonts/</code> แล้ว</td><td>จำเป็นสำหรับสร้าง PDF ภาษาไทย</td></tr>
+          <tr><td><b>2. ฟอนต์</b></td><td>วาง <code>Sarabun-*.ttf</code> ใน <code>tools/fonts/</code> หรือติดตั้งฟอนต์ไทยในระบบ</td><td>จำเป็นเมื่อสร้าง PDF ในเครื่อง — บน GitHub Actions ติดตั้งให้อัตโนมัติ</td></tr>
           <tr><td><b>3. แปลงข้อมูล</b></td><td><code>python tools/etl_students.py 11.xlsx --report</code></td><td>สร้าง <code>assets/data/school-data.json</code></td></tr>
-          <tr><td><b>4. สร้างเอกสาร</b></td><td><code>python tools/build_docs.py --all</code></td><td>สร้าง PPTX + PDF ใน <code>dist/</code></td></tr>
+          <tr><td><b>4. สร้างเอกสาร</b></td><td><code>python tools/build_docs.py --all</code></td><td>สร้าง PPTX + PDF ใน <code>dist/</code> — บน GitHub Pages รันอัตโนมัติตอน deploy จาก JSON ล่าสุด</td></tr>
           <tr><td><b>5. เปิดเว็บ</b></td><td><code>python -m http.server 8080</code></td><td>เปิด <code>http://localhost:8080</code></td></tr>
         </tbody>
       </table>
