@@ -100,12 +100,19 @@
       <div class="cw"><canvas id="chartCompare" role="img" aria-label="เปรียบเทียบกฎรายหัวกับกฎห้องเรียนตามประเภทโรงเรียน"></canvas></div>
     </div>
 
+    <div class="chart-card">
+      <h3>นักเรียนต่อห้องเรียน — รากของความไม่สมดุล</h3>
+      <p class="cc-sub">แท่งสีแดงอยู่ต่ำกว่าเกณฑ์อ้างอิง 1 ครูต่อ <span id="ratioLabelSpr">20</span> นักเรียน จึงถูกสูตรรายหัวลงโทษโดยอัตโนมัติ</p>
+      <div class="cw-sm"><canvas id="chartSPR" role="img" aria-label="นักเรียนต่อห้องเรียนตามประเภทโรงเรียน"></canvas></div>
+    </div>
+
     <div class="callout callout-warn">
       <div class="callout-icon">🔍</div>
       <div>
         <h4>คำเตือนเชิงวิธีวิทยา</h4>
         <p>อัตรา 1:20 เป็นเกณฑ์อ้างอิงเพื่อการสาธิต ไม่ใช่เกณฑ์จริงของ ก.ค.ศ. ซึ่งจำแนกตามขนาดสถานศึกษา การศึกษาพิเศษและศูนย์การศึกษาพิเศษมีนักเรียนต่อห้องต่ำโดยเจตนา — ไม่ควรตีความว่าเป็น “ขาดครู” ในความหมายเดียวกับ สพป.</p>
         <p style="margin-top:10px">ข้อมูลเป็นค่ารวมระดับประเทศ ไม่สะท้อนการกระจายรายโรงเรียน ช่องว่างที่แท้จริงในโรงเรียนขนาดเล็กรายแห่งย่อมรุนแรงกว่าค่าเฉลี่ยนี้</p>
+        <p style="margin-top:14px"><a href="report.html#sA" class="btn btn-sm">อ่านภาคผนวก ก: Cost Function Analysis →</a></p>
       </div>
     </div>
   </div>
@@ -179,7 +186,7 @@
   const $ = s => document.querySelector(s);
   const $$ = s => Array.from(document.querySelectorAll(s));
   const fmt = window.EET.fmt;
-  let chartWaterfall = null, chartCompare = null, ANALYSIS = null, SCOPE = 'core';
+  let chartWaterfall = null, chartCompare = null, chartSpr = null, ANALYSIS = null, SCOPE = 'core';
 
   function current() {
     return ANALYSIS[SCOPE];
@@ -249,6 +256,33 @@
         plugins: {
           legend: { display: true, position: 'bottom', labels: { color: c.text, font: { family: 'IBM Plex Sans Thai' } } },
           tooltip: { callbacks: { label: x => ' ' + x.dataset.label + ': ' + fmt(x.parsed.y) } }
+        }
+      }
+    });
+
+    const ratio = (ANALYSIS.data.meta && ANALYSIS.data.meta.teacher_ratio) || 20;
+    if (chartSpr) chartSpr.destroy();
+    chartSpr = new Chart($('#chartSPR'), {
+      type: 'bar',
+      data: {
+        labels: list.map(u => u.short),
+        datasets: [{
+          data: list.map(u => +u.spr.toFixed(1)),
+          backgroundColor: list.map(u => u.spr < ratio ? '#c9483c' : '#2e8b57'),
+          borderRadius: 6,
+          barPercentage: 0.6
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: x => ' ' + x.parsed.y + ' คน/ห้อง' } }
+        },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: c.text, font: { family: 'IBM Plex Sans Thai', size: 12 } } },
+          y: { grid: { color: c.grid }, ticks: { color: c.text }, beginAtZero: true,
+               title: { display: true, text: 'นักเรียนต่อห้องเรียน (คน)', color: c.text, font: { family: 'IBM Plex Sans Thai', size: 12 } } }
         }
       }
     });
@@ -342,6 +376,8 @@
     const a = window.EET.analyse(data);
     ANALYSIS = { data, core: a.core, all: a.all };
     $('#ratioLabel').textContent = a.ratio;
+    const sprLabel = $('#ratioLabelSpr');
+    if (sprLabel) sprLabel.textContent = a.ratio;
     $('#dataSrc').innerHTML =
       `<b>แหล่งข้อมูล:</b> ${data.meta.title}<br>
        <b>หน่วยงาน:</b> ${data.meta.source} · ปีการศึกษา ${data.meta.academic_year}<br>

@@ -28,7 +28,7 @@ robots.txt
 _headers / _redirects ส่วนหัวและความเปลี่ยนเส้นทาง Cloudflare Pages
 wrangler.toml         ชี้ output ไปที่ .site/
 11.xlsx               ตารางที่ 11 สพฐ. ปีการศึกษา 2569
-tools/                ETL, สร้างเอกสาร, ซิงก์ chrome, จัดชุดเผยแพร่, ทดสอบ
+tools/                ETL, สร้างเอกสาร, ซิงก์ chrome, ICC/power, สุ่มรุ่น WSF, ทดสอบ
 LICENSE               MIT สำหรับโค้ด · CC BY-NC-SA 4.0 สำหรับเนื้อหา
 ```
 

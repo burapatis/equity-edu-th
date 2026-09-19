@@ -6,3 +6,15 @@ __pycache__/
 .site/
 .wrangler/
 Untitled/
+~$*.xlsx
+~$*.xls
+
+# ข้อมูลดิบที่มีข้อมูลส่วนบุคคล — ห้าม commit
+data/raw/
+data/*.csv
+*_personal.csv
+*_rawscores.csv
+
+# ผลลัพธ์ที่สร้างใหม่ได้จากเครื่องมือสถิติ
+assets/data/icc.json
+assets/data/power.json

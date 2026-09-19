@@ -255,5 +255,15 @@
       "gap_pct": 11.3,
       "status": "deficit"
     }
+  },
+  "derived": {
+    "core_deficit": 71168,
+    "core_surplus": 42857,
+    "core_net": 28311,
+    "inclusive_deficit": 82262,
+    "inclusive_surplus": 42857,
+    "inclusive_net": 39405,
+    "spr_ratio_sec_to_prim": 2.21,
+    "note": "ระบบหลัก สพป./สพม.: 71,168 − 42,857 = 28,311 · รวมทุกประเภท: 71,168 + 6,186 + 4,093 + 815 − 42,857 = 39,405"
   }
 }
