@@ -15,6 +15,7 @@ HTML = [
     "report.html",
     "simulator.html",
     "gap-map.html",
+    "infographic.html",
     "resources.html",
     "about.html",
     "404.html",

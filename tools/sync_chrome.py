@@ -42,6 +42,14 @@ PAGES = [
         "footer_extra": "",
     },
     {
+        "file": "infographic.html",
+        "nav": "infographic",
+        "footer": "inner",
+        "disclaimer": "",
+        "footer_extra": "",
+        "skip_footer": True,
+    },
+    {
         "file": "resources.html",
         "nav": "resources",
         "footer": "inner",
@@ -69,6 +77,7 @@ SITEMAP_PATHS = [
     ("report.html", "0.9", "monthly"),
     ("simulator.html", "0.8", "monthly"),
     ("gap-map.html", "0.8", "monthly"),
+    ("infographic.html", "0.8", "monthly"),
     ("resources.html", "0.7", "monthly"),
     ("about.html", "0.6", "yearly"),
     ("dist/one-pager.pdf", "0.5", "yearly"),
@@ -81,6 +90,7 @@ NAV_ITEMS = [
     ("report.html", "รายงานเต็ม", "report", ""),
     ("simulator.html", "เครื่องมือจำลอง", "simulator", ""),
     ("gap-map.html", "แผนที่ช่องว่าง", "gap-map", ""),
+    ("infographic.html", "Infographic", "infographic", ""),
     ("resources.html", "ทรัพยากร", "resources", "nav-cta"),
     ("about.html", "เกี่ยวกับ", "about", ""),
 ]
@@ -281,10 +291,11 @@ def sync_file(page: dict) -> None:
         html, "HEADER", header,
         fallback=('<a href="#main" class="skip-link">', "</header>"),
     )
-    html = swap(
-        html, "FOOTER", footer,
-        fallback=('<footer class="site-footer">', "</footer>"),
-    )
+    if not page.get("skip_footer"):
+        html = swap(
+            html, "FOOTER", footer,
+            fallback=('<footer class="site-footer">', "</footer>"),
+        )
     if page["file"] == "404.html":
         html = re.sub(r'<base href="[^"]*">', f'<base href="{base_href()}">', html, count=1)
     path.write_text(html, encoding="utf-8")
