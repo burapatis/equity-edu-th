@@ -563,7 +563,7 @@ input[type=number],select{width:100%;padding:11px 14px;border:1px solid var(--bo
   .section{padding:14pt 0;break-inside:avoid}
   .flagship,.cta-band,.realloc{background:#f0f0f0!important;color:#000!important}
   a[href^="http"]::after{content:" (" attr(href) ")";font-size:8pt;color:#555}
-  body.infographic-page{font-size:initial!important;margin:0!important;padding:0!important}
+  body.infographic-page{font-size:10pt!important;line-height:1.4!important;margin:0!important;padding:0!important}
   body.infographic-page a[href^="http"]::after{content:none!important}
   body.infographic-page .infographic-toolbar,
   body.infographic-page .export-guide,
