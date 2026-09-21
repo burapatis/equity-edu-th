@@ -71,7 +71,7 @@ git commit -m "Update school data from the new OBEC table."
 git push origin main
 ```
 
-ตอน deploy นั้น GitHub Actions จะติดตั้งฟอนต์ไทย แล้วรัน `python tools/build_docs.py --all` เพื่อสร้าง `dist/wsf-deck.pptx`, `dist/executive-brief.pdf` และ `dist/one-pager.pdf` จาก JSON ล่าสุด ก่อนอัปโหลดขึ้น Pages — ไม่รัน ETL บน CI
+ตอน deploy นั้น GitHub Actions ใช้ฟอนต์ Sarabun ที่อยู่ใน `tools/fonts/` แล้วรัน `python tools/build_docs.py --all` เพื่อสร้าง `dist/wsf-deck.pptx`, `dist/executive-brief.pdf` และ `dist/one-pager.pdf` จาก JSON ล่าสุด ก่อนอัปโหลดขึ้น Pages — ไม่รัน ETL บน CI
 
 หน้า `404.html` ใส่ `<base href>` ตาม path ของไซต์ เพื่อให้สไตล์และเมนูทำงานแม้ URL ที่ผิดจะอยู่ลึกกว่าโฟลเดอร์โปรเจกต์
 
