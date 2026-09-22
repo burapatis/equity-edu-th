@@ -437,14 +437,22 @@ s{opacity:.55}
    ============================================================ */
 .about-page{padding-bottom:72px}
 .about-body{max-width:76ch}
-.contact-card{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:26px 28px;margin:22px 0 26px}
+.contact-card{background:var(--bg-alt);border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px;margin:22px 0 26px;display:grid;grid-template-columns:168px minmax(0,1fr);gap:22px 26px;align-items:start}
+.contact-photo{display:block;width:168px;max-width:168px;height:210px;object-fit:cover;object-position:50% 12%;border-radius:12px;border:1px solid var(--border);background:var(--bg);box-shadow:var(--shadow-sm);flex-shrink:0}
+.contact-meta{min-width:0;padding-top:8px}
 .contact-card .contact-role{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin:0 0 6px}
 .contact-card h3{font-size:1.28rem;margin:0 0 16px}
 .contact-card dl{margin:0;display:grid;gap:10px}
 .contact-card dl div{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:10px;align-items:baseline}
 .contact-card dt{font-size:.82rem;color:var(--text-3);font-weight:600}
 .contact-card dd{margin:0;font-size:.95rem}
-@media(max-width:520px){.contact-card dl div{grid-template-columns:1fr}}
+@media(max-width:640px){
+  .contact-card{grid-template-columns:1fr;justify-items:center;text-align:center;padding:22px 20px}
+  .contact-photo{width:148px;max-width:148px;height:186px}
+  .contact-meta{width:100%}
+  .contact-card dl div{grid-template-columns:1fr;justify-items:center;gap:2px}
+  .contact-card dt{font-size:.76rem}
+}
 
 /* ============================================================
    SIMULATOR PAGE
