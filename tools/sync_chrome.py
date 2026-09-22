@@ -50,6 +50,24 @@ PAGES = [
         "skip_footer": True,
     },
     {
+        "file": "slides.html",
+        "nav": "slides",
+        "footer": "inner",
+        "disclaimer": "",
+        "footer_extra": "",
+        "skip_header": True,
+        "skip_footer": True,
+    },
+    {
+        "file": "qa-slides.html",
+        "nav": "qa-slides",
+        "footer": "inner",
+        "disclaimer": "",
+        "footer_extra": "",
+        "skip_header": True,
+        "skip_footer": True,
+    },
+    {
         "file": "resources.html",
         "nav": "resources",
         "footer": "inner",
@@ -78,6 +96,8 @@ SITEMAP_PATHS = [
     ("simulator.html", "0.8", "monthly"),
     ("gap-map.html", "0.8", "monthly"),
     ("infographic.html", "0.8", "monthly"),
+    ("slides.html", "0.8", "monthly"),
+    ("qa-slides.html", "0.7", "monthly"),
     ("resources.html", "0.7", "monthly"),
     ("about.html", "0.6", "yearly"),
     ("dist/one-pager.pdf", "0.5", "yearly"),
@@ -91,6 +111,8 @@ NAV_ITEMS = [
     ("simulator.html", "เครื่องมือจำลอง", "simulator", ""),
     ("gap-map.html", "แผนที่ช่องว่าง", "gap-map", ""),
     ("infographic.html", "Infographic", "infographic", ""),
+    ("slides.html", "สไลด์", "slides", ""),
+    ("qa-slides.html", "Q&A", "qa-slides", ""),
     ("resources.html", "ทรัพยากร", "resources", "nav-cta"),
     ("about.html", "เกี่ยวกับ", "about", ""),
 ]
@@ -287,10 +309,11 @@ def sync_file(page: dict) -> None:
     )
     html = inject_head(html, chrome)
     header, footer = build_nav_and_footer(page)
-    html = swap(
-        html, "HEADER", header,
-        fallback=('<a href="#main" class="skip-link">', "</header>"),
-    )
+    if not page.get("skip_header"):
+        html = swap(
+            html, "HEADER", header,
+            fallback=('<a href="#main" class="skip-link">', "</header>"),
+        )
     if not page.get("skip_footer"):
         html = swap(
             html, "FOOTER", footer,

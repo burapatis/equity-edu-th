@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เด็คนำเสนอ: เปลี่ยนสูตร เปลี่ยนความเสมอภาคทางการศึกษาไทย</title>
+<meta name="description" content="สไลด์ประกอบการบรรยายเชิงนโยบาย 14 สไลด์ พร้อมบทพูด (Speaker Notes) สำหรับผู้บริหารและผู้สนใจ">
+<!-- EET:CHROME-HEAD -->
+<meta name="theme-color" content="#1a2b4c">
+<link rel="canonical" href="https://eet.thamdee.com/slides.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="th_TH">
+<meta property="og:url" content="https://eet.thamdee.com/slides.html">
+<meta property="og:title" content="เด็คนำเสนอ: เปลี่ยนสูตร เปลี่ยนความเสมอภาคทางการศึกษาไทย">
+<meta property="og:description" content="สไลด์ประกอบการบรรยายเชิงนโยบาย 14 สไลด์ พร้อมบทพูด (Speaker Notes) สำหรับผู้บริหารและผู้สนใจ">
+<meta property="og:image" content="https://eet.thamdee.com/assets/img/og-image.png">
+<meta property="og:image:alt" content="97:3 ความเสมอภาคทางการศึกษาไทย">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="เด็คนำเสนอ: เปลี่ยนสูตร เปลี่ยนความเสมอภาคทางการศึกษาไทย">
+<meta name="twitter:description" content="สไลด์ประกอบการบรรยายเชิงนโยบาย 14 สไลด์ พร้อมบทพูด (Speaker Notes) สำหรับผู้บริหารและผู้สนใจ">
+<meta name="twitter:image" content="https://eet.thamdee.com/assets/img/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/og-image.png">
+<!-- /EET:CHROME-HEAD -->
+<style>
+/* ============================================================
+   SLIDES PRESENTATION SYSTEM (16:9)
+   ============================================================ */
+:root {
+  --slide-bg: #f4f6f9;
+  --slide-card: #ffffff;
+  --slide-text: #16202f;
+  --slide-sub: #4a5769;
+  --slide-border: #e2e8f1;
+}
+[data-theme="dark"] {
+  --slide-bg: #070d18;
+  --slide-card: #111a2b;
+  --slide-text: #e8edf5;
+  --slide-sub: #a9b6c9;
+  --slide-border: #233149;
+}
+
+body.deck-body {
+  margin: 0;
+  padding: 0;
+  background: var(--slide-bg);
+  color: var(--slide-text);
+  font-family: var(--ff);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.45;
+}
+body.deck-body p { margin: 0; }
+body.deck-body a.deck-brand:hover,
+body.deck-body a.deck-btn:hover { text-decoration: none; }
+
+/* Deck Header bar */
+.deck-topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 54px;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 100;
+}
+.deck-brand {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--text);
+  text-decoration: none;
+}
+.deck-brand span { color: var(--amber-500); }
+.deck-counter {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--text-2);
+  background: var(--bg-alt);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+.deck-tools {
+  display: flex;
+  gap: 8px;
+}
+.deck-btn {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: .8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.deck-btn:hover { background: var(--border); }
+
+/* Main Stage */
+.deck-stage {
+  flex: 1;
+  position: relative;
+  margin-top: 54px;
+  margin-bottom: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.slide {
+  position: relative;
+  grid-area: 1 / 1;
+  width: min(100%, 1280px);
+  aspect-ratio: 16 / 9;
+  max-height: calc(100vh - 140px);
+  background: var(--slide-card);
+  border: 1px solid var(--slide-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-lg);
+  padding: clamp(32px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  transform: scale(.97);
+  transition: opacity .35s cubic-bezier(.16,.84,.44,1), transform .35s cubic-bezier(.16,.84,.44,1);
+}
+.slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+  transform: scale(1);
+}
+
+/* Slide Typography & Layout */
+.slide-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.slide-tag {
+  font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--amber-500); background: var(--amber-100); padding: 4px 12px; border-radius: 6px;
+}
+.slide-no { font-family: 'IBM Plex Sans', sans-serif; font-size: .85rem; color: var(--text-3); }
+
+.slide h2 {
+  font-size: clamp(1.8rem, 3.8vw, 2.7rem);
+  letter-spacing: -.02em;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+.slide h2 span { color: var(--amber-500); }
+.slide p.lead-txt {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--slide-sub);
+  max-width: 65ch;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.slide-body { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+/* Grid layouts inside slides */
+.s-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; }
+.s-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.s-card {
+  background: var(--bg-alt); border: 1px solid var(--border); border-radius: 12px; padding: 24px;
+}
+.s-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.s-card p { font-size: .9rem; color: var(--slide-sub); margin: 0; }
+
+.big-stat {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 700;
+  color: var(--navy-700);
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+[data-theme="dark"] .big-stat { color: var(--accent); }
+.big-stat small { font-size: .35em; font-weight: 500; color: var(--text-3); margin-left: 8px; }
+
+/* Speaker Notes Drawer */
+.notes-drawer {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  max-height: 38vh;
+  background: var(--navy-900);
+  color: #fff;
+  border-top: 3px solid var(--amber-500);
+  padding: 20px 32px;
+  box-shadow: 0 -10px 30px rgba(0,0,0,.3);
+  transform: translateY(101%);
+  transition: transform .3s cubic-bezier(.16,.84,.44,1);
+  z-index: 200;
+  overflow-y: auto;
+}
+.notes-drawer.is-open { transform: translateY(0); }
+.notes-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,.15); padding-bottom: 8px; }
+.notes-header strong { color: var(--amber-400); font-size: .9rem; letter-spacing: .05em; text-transform: uppercase; }
+.notes-close { background: transparent; border: none; color: #fff; cursor: pointer; font-size: 1.2rem; }
+.notes-content { font-size: .96rem; line-height: 1.7; opacity: .92; max-width: 90ch; }
+.notes-content p { margin: 0 0 10px; }
+
+/* Deck Footer navigation bar */
+.deck-footer {
+  height: 50px;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 24px;
+}
+.deck-nav-btn {
+  background: var(--navy-700); color: #fff; border: none; padding: 8px 18px;
+  border-radius: 8px; font-weight: 600; font-size: .85rem; cursor: pointer; transition: .2s;
+}
+.deck-nav-btn:hover { background: var(--navy-600); }
+.deck-nav-btn:disabled { opacity: .3; cursor: not-allowed; }
+
+@media(max-width: 768px) {
+  .slide { padding: 20px; }
+  .s-grid-2, .s-grid-3 { grid-template-columns: 1fr; gap: 14px; }
+  .deck-topbar { padding: 0 12px; gap: 8px; }
+  .deck-tools { flex-wrap: wrap; justify-content: flex-end; }
+}
+</style>
+</head>
+<body class="deck-body">
+<a href="#stage" class="skip-link">ข้ามไปยังสไลด์</a>
+
+<!-- TOPBAR -->
+<header class="deck-topbar">
+  <a href="index.html" class="deck-brand">97<span>:</span>3 — Equity Education Thailand</a>
+  <div class="deck-counter" id="slideCounter" aria-live="polite">01 / 14</div>
+  <div class="deck-tools">
+    <a href="qa-slides.html" class="deck-btn">คู่มือ Q&amp;A</a>
+    <button type="button" class="deck-btn" id="themeToggle" aria-label="สลับโหมดสี">โหมดสี</button>
+    <button type="button" class="deck-btn" id="notesToggle" title="กดปุ่ม N" aria-expanded="false" aria-controls="notesDrawer">บทพูด (N)</button>
+    <button type="button" class="deck-btn" id="fullscreenToggle" title="กดปุ่ม F">ขยายเต็มจอ (F)</button>
+  </div>
+</header>
+
+<!-- STAGE -->
+<main class="deck-stage" id="stage">
+
+  <!-- SLIDE 1 -->
+  <section class="slide is-active" data-slide="1"
+    data-notes="เรียนท่านประธานและท่านกรรมการครับ วันนี้ผมมีเวลา 20 นาที และผมจะใช้มันเพื่อเสนอข้อเสนอเดียว ที่ไม่ต้องขอเงินเพิ่ม ไม่ต้องแก้พระราชบัญญัติ และทำได้ภายในหนึ่งปีงบประมาณครับ แต่ก่อนจะไปถึงข้อเสนอ ผมขออนุญาตพาท่านดูตัวเลขชุดหนึ่งก่อนครับ">
+    <div class="slide-header"><span class="slide-tag">องก์ที่ 1 · ตะขอ</span><span class="slide-no">01 / 14</span></div>
+    <div class="slide-body" style="text-align:center; align-items:center;">
+      <div style="font-family:'IBM Plex Sans',sans-serif; font-size:clamp(4rem,10vw,8rem); font-weight:700; color:var(--navy-700); letter-spacing:-.04em; margin-bottom:10px;">
+        97 <span style="color:var(--amber-500)">:</span> 3
+      </div>
+      <h2>ทำไมการศึกษาไทยจึงไม่ดีขึ้น<br>ทั้งที่เราทุ่มงบมากเป็นอันดับ 3 ของประเทศ</h2>
+      <p class="lead-txt" style="text-align:center;">รายงานวิเคราะห์นโยบายสหวิทยาการ · กันยายน 2569</p>
+    </div>
+    <div style="font-size:.8rem; color:var(--text-3); text-align:right;">กดปุ่มลูกศรขวา → เพื่อเลื่อนสไลด์</div>
+  </section>
+
+  <!-- SLIDE 2 -->
+  <section class="slide" data-slide="2"
+    data-notes="ข้อแรกที่ต้องตกลงกันให้ตรงกันก่อนครับ — เราไม่ได้ขาดเงิน งบกระทรวงศึกษาธิการปีนี้อยู่ที่ 355,108 ล้านบาท เป็นอันดับสามของประเทศครับ เพราะฉะนั้น ถ้าใครเสนอว่าทางแก้คือเพิ่มงบการศึกษา ผมขอเรียนตรง ๆ ว่า นั่นไม่ใช่คำตอบครับ เพราะเงินใหม่จะไหลไปตามสูตรเดิม และถ้าสูตรเดิมจัดสรรผิดทิศ การเพิ่มเงินก็คือการขยายช่องว่างให้กว้างขึ้นตามสัดส่วนครับ">
+    <div class="slide-header"><span class="slide-tag">องก์ที่ 1 · ตะขอ</span><span class="slide-no">02 / 14</span></div>
+    <div class="slide-body">
+      <span class="slide-tag" style="margin-bottom:12px; width:fit-content;">งบประมาณกระทรวงศึกษาธิการ ปี 2569</span>
+      <div class="big-stat">355,108 <small>ล้านบาท</small></div>
+      <h2>งบสูงเป็นอันดับ 3 ของประเทศ — แต่ปัญหาไม่ได้อยู่ที่จำนวนเงิน</h2>
+      <p class="lead-txt">ถ้าสูตรจัดสรรทรัพยากรผิดทิศทาง การเพิ่มงบประมาณเข้าไปเฉย ๆ จะยิ่งขยายช่องว่างความเหลื่อมล้ำให้กว้างขึ้นตามสัดส่วน</p>
+    </div>
+    <div></div>
+  </section>
+
+  <!-- SLIDE 3 -->
+  <section class="slide" data-slide="3"
+    data-notes="ถ้าท่านจำอะไรจากวันนี้ได้เพียงอย่างเดียว ผมขอให้จำตัวเลขนี้ครับ — 97 ต่อ 3 ทรัพยากรการศึกษาประมาณ 97 เปอร์เซ็นต์ ถูกจัดสรรด้วยหลัก ให้เท่ากันทุกหัว ส่วนอีก 3 เปอร์เซ็นต์ คือส่วนที่จัดสรร ตามความจำเป็น ซึ่งก็คืองานของกองทุนเพื่อความเสมอภาคทางการศึกษา แต่ประเด็นคือ — ไม่ว่าเราจะทำ 3 เปอร์เซ็นต์นั้นให้ดีเพียงใด ก็ไม่มีทางหักล้างแรงของอีก 97 เปอร์เซ็นต์ได้ครับ">
+    <div class="slide-header"><span class="slide-tag">องก์ที่ 1 · ตะขอ</span><span class="slide-no">03 / 14</span></div>
+    <div class="slide-body">
+      <h2>ตัวเลขเดียวที่ต้องจำ: โครงสร้างการจัดสรรทรัพยากรไทย</h2>
+      <div class="s-grid-2" style="margin-top:20px;">
+        <div class="s-card" style="border-left:5px solid var(--red-600);">
+          <div style="font-size:2rem; font-weight:700; color:var(--red-600); margin-bottom:8px;">≈ 97%</div>
+          <h3>เงินอุดหนุนรายหัว + อัตรากำลังครู</h3>
+          <p>ออกแบบตามหลัก “เท่ากันทุกหัว” (Equality) — ให้เหมือนกันหมดโดยไม่สนใจต้นทุนที่แท้จริง</p>
+        </div>
+        <div class="s-card" style="border-left:5px solid var(--green-600);">
+          <div style="font-size:2rem; font-weight:700; color:var(--green-600); margin-bottom:8px;">≈ 3%</div>
+          <h3>กสศ. + โครงการเฉพาะกิจ</h3>
+          <p>ออกแบบตามหลัก “ตามความจำเป็น” (Equity) — มีประสิทธิภาพสูงแต่ขนาดเล็กเกินไป</p>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </section>
+
+  <!-- SLIDE 4 -->
+  <section class="slide" data-slide="4"
+    data-notes="ทีนี้ผมขอพาท่านดูข้อมูลจริงครับ ตัวเลขทั้งหมดที่ผมจะแสดงต่อจากนี้ มาจาก ข้อมูลของ สพฐ. เอง ปีการศึกษา 2569 ไม่ใช่การประมาณการ ไม่ใช่การสำรวจ เรามีนักเรียน 6.17 ล้านคน และมีห้องเรียนที่ต้องเปิดสอน 348,047 ห้องครับ ขอให้ท่านจำตัวเลขที่สองไว้นะครับ — 348,047 ห้อง เพราะมันคือหัวใจของเรื่องทั้งหมดที่ผมจะเล่าต่อไป">
+    <div class="slide-header"><span class="slide-tag">องก์ที่ 2 · หลักฐาน</span><span class="slide-no">04 / 14</span></div>
+    <div class="slide-body">
+      <span class="slide-tag" style="margin-bottom:12px; width:fit-content;">ฐานข้อมูล สพฐ. ปีการศึกษา 2569</span>
+      <div class="s-grid-2">
+        <div>
+          <div class="big-stat">6,172,840 <small>คน</small></div>
+          <h3 style="margin-top:10px;">นักเรียนทั้งสังกัด สพฐ.</h3>
+        </div>
+        <div>
+          <div class="big-stat" style="color:var(--amber-500);">348,047 <small>ห้อง</small></div>
+          <h3 style="margin-top:10px;">ห้องเรียนทั้งหมดในระบบ</h3>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </section>
+
+  <!-- SLIDE 5 -->
+  <section class="slide" data-slide="5"
+    data-notes="นี่คือภาพที่ผมอยากให้ท่านเห็นครับ โรงเรียนประถมในสังกัด สพป. มีนักเรียนเฉลี่ย 14.6 คนต่อห้อง ส่วนโรงเรียนมัธยมในสังกัด สพม. มี 32.3 คนต่อห้อง ต่างกันกว่าสองเท่าครับ ทีนี้ ถ้าเราจัดสรรครูด้วยกฎ นักเรียนหารด้วยยี่สิบ เหมือนกันทั้งสองแห่ง ท่านคิดว่าใครจะได้ครูพอ และใครจะได้ครูไม่พอครับ">
+    <div class="slide-header"><span class="slide-tag">องก์ที่ 2 · หลักฐาน</span><span class="slide-no">05 / 14</span></div>
+    <div class="slide-body">
+      <h2>นักเรียนต่อห้องเรียน: สังกัดประถม vs มัธยม</h2>
+      <div class="s-grid-2" style="margin-top:20px;">
+        <div class="s-card" style="border-top:4px solid var(--red-600);">
+          <div style="font-size:2.5rem; font-weight:700; color:var(--red-600);">14.6 <small style="font-size:1rem; color:var(--text-3);">คน/ห้อง</small></div>
+          <h3 style="margin-top:8px;">ประถมศึกษา (สพป.)</h3>
+          <p>ต่ำกว่าเกณฑ์อ้างอิง 1:20 อย่างมาก — เป็นต้นเหตุของครูสอนควบชั้น</p>
+        </div>
+        <div class="s-card" style="border-top:4px solid var(--green-600);">
+          <div style="font-size:2.5rem; font-weight:700; color:var(--green-600);">32.3 <small style="font-size:1rem; color:var(--text-3);">คน/ห้อง</small></div>
+          <h3 style="margin-top:8px;">มัธยมศึกษา (สพม.)</h3>
+          <p>สูงกว่าเกณฑ์อ้างอิง — เกิดภาวะส่วนเกินในเชิงสถิติ (ต่างกัน 2.2 เท่า)</p>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </section>
+
+  <!-- SLIDE 6 -->
+  <section class="slide" data-slide="6"
+    data-notes="นี่ครับคือสไลด์ที่สำคัญที่สุดของการนำเสนอวันนี้ เมื่อเราคำนวณว่าถ้าใช้หลัก อย่างน้อยหนึ่งครูต่อหนึ่งห้องเรียน ระบบจะขาดครูเท่าไร ตัวเลขที่ปรากฏในภาพรวมคือประมาณ 39,000 อัตรา ฟังดูจัดการได้ใช่ไหมครับ แต่ตัวเลข 39,000 นี้ เป็นผลลัพธ์ของการลบครับ ความจริงคือ มีหน่วยที่ขาดแคลนรวมกัน 82,000 อัตรา และถูกกลบด้วยหน่วยที่มีส่วนเกินอีก 42,000 อัตรา พูดอีกอย่างคือ เราไม่ได้ขาดครู 39,000 คนครับ — เราวางครูผิดที่ 42,000 คน และขาดจริงอีก 39,000 คน ปัญหาของเราจึงไม่ใช่ จำนวน ครับ แต่เป็น การกระจาย และต้นเหตุของการกระจายที่ผิด ก็คือ สูตร ครับ">
+    <div class="slide-header"><span class="slide-tag">องก์ที่ 2 · หลักฐาน</span><span class="slide-no">06 / 14</span></div>
+    <div class="slide-body">
+      <h2>สิ่งที่ค่าเฉลี่ยรวมซ่อนไว้: กายวิภาคความขาดแคลน</h2>
+      <div class="s-grid-3" style="margin-top:16px;">
+        <div class="s-card" style="background:var(--red-100);">
+          <div style="font-size:2rem; font-weight:700; color:var(--red-600);">82,262</div>
+          <h3 style="margin-top:6px;">ขาดแคลนจริง</h3>
+          <p>รวมทุกหน่วยที่ครูไม่พอต่อจำนวนห้องเรียน</p>
+        </div>
+        <div class="s-card" style="background:var(--green-100);">
+          <div style="font-size:2rem; font-weight:700; color:var(--green-600);">42,857</div>
+          <h3 style="margin-top:6px;">ส่วนเกินใน สพม.</h3>
+          <p>ครูมากกว่าจำนวนห้องเรียนที่ต้องเปิด</p>
+        </div>
+        <div class="s-card" style="background:var(--bg-alt); border:2px solid var(--navy-700);">
+          <div style="font-size:2rem; font-weight:700; color:var(--navy-700);">39,405</div>
+          <h3 style="margin-top:6px;">สุทธิที่รายงาน</h3>
+          <p>ตัวเลขที่ซ่อนความผิดพลาดของการกระจายไว้</p>
+        </div>
+      </div>
+      <p style="margin-top:20px; font-weight:600; color:var(--red-600);">→ เราไม่ได้ขาดครู 39,405 คน — เรากระจายผิดที่ 42,857 คน และขาดจริงอีก 82,262 คน</p>
+    </div>
+    <div></div>
+  </section>
+
+  <!-- SLIDE 7 -->
+  <section class="slide" data-slide="7"
+    data-notes="ผมขอยกตัวอย่างที่เป็นรูปธรรมครับ โรงเรียนแห่งหนึ่ง มีเด็กชั้นละ 8 คน ตั้งแต่ ป.1 ถึง ป.6 รวมทั้งโรงเรียน 48 คน ตามเกณฑ์รายหัว โรงเรียนนี้จะได้ครูประมาณ 2 คนครึ่ง แต่โรงเรียนนี้ต้องเปิดสอน 6 ชั้น ครับ เพราะฉะนั้นครูหนึ่งคน ต้องสอนควบสองถึงสามชั้นพร้อมกัน ท่านครับ ไม่ว่าครูคนนั้นจะเก่งเพียงใด ผลลัพธ์ก็จะออกมาแบบเดียวกัน เพราะนี่ไม่ใช่ปัญหาของคนครับ นี่เป็นปัญหาของเลขคณิต">
+    <div class="slide-header"><span class="slide-tag">องก์ที่ 3 · วินิจฉัย</span><span class="slide-no">07 / 14</span></div>
+    <div class="slide-body">
+      <h2>กรณีศึกษา: โรงเรียนขนาดเล็ก (48 คน / 6 ห้อง)</h2>
+      <div class="s-grid-2" style="margin-top:16px;">
+        <div class="s-card">
+          <h3>ข้อจำกัดทางเลขคณิต</h3>
+          <ul style="margin:10px 0 0; padding-left:20px; color:var(--slide-sub); font-size:.95rem;">
+            <li>นักเรียนรวม <b>48 คน</b> (ชั้นละ 8 คน)</li>
+            <li>ต้องเปิดสอนตามหลักสูตร <b>6 ชั้น</b> (ป.1–ป.6)</li>
+            <li>ได้ครูตามเกณฑ์รายหัวเพียง <b>2.4 อัตรา</b></li>
+            <li><b>ผลลัพธ์:</b> ครู 1 คน ต้องสอนควบ 2–3 ชั้นพร้อมกัน</li>
+          </ul>
+        </div>
+        <div class="s-card" style="background:var(--red-100); border-color:var(--red-600);">
+          <h3 style="color:var(--red-600);">ไม่ใช่ปัญหาของคน</h3>
+          <p style="color:var(--text); font-weight:500; font-size:1.05rem; margin-top:10px;">
+            “ไม่ว่าครูคนนั้นจะเก่งเพียงใด ผลลัพธ์ก็จะออกมาแบบเดียวกัน เพราะนี่คือข้อจำกัดทางเลขคณิตของสูตรจัดสรร”
+          </p>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </section>
+
+  <!-- SLIDE 8 -->
+  <section class="slide" data-slide="8"
+    data-notes="และปัญหาคือ วงจรนี้ หมุนเองได้ครับ เด็กลด → ได้ครูน้อยลง → ครูสอนควบชั้น → คุณภาพลด → ผู้ปกครองที่มีทางเลือกย้ายลูกออก → เด็กยิ่งลดลงไปอีก ขอให้ท่านสังเกตนะครับว่า ในวงจรนี้ ไม่มีขั้นตอนไหนเลยที่เกิดจากความบกพร่องของใคร ทุกขั้นตอนเป็นผลของกฎที่ระบบเขียนขึ้นเอง เพราะฉะนั้น คำถามที่ถูกต้องจึงไม่ใช่ ควรควบรวมโรงเรียนเล็กหรือไม่ แต่คือ — ทำไมสูตรของเราจึงลงโทษโรงเรียนตามขนาด แทนที่จะจัดสรรตามความจำเป็น ครับ">
+    <div class="slide-header"><span class="slide-tag">องก์ที่ 3 · วินิจฉัย</span><span class="slide-no">08 / 14</span></div>
+    <div class="slide-body">
+      <h2>กับดักโรงเรียนขนาดเล็ก: วงจรที่หมุนเองได้</h2>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:16px;">
+        <div class="s-card" style="padding:14px 20px; display:flex; align-items:center; gap:16px;">
+          <span style="width:30px; height:30px; background:var(--navy-700); color:#fff; border-radius:50%; display:grid; place-items:center; font-weight:700;">1</span>
+          <span>จำนวนเด็กในโรงเรียนลดลงตามภาวะประชากร</span>
+        </div>
+        <div class="s-card" style="padding:14px 20px; display:flex; align-items:center; gap:16px;">
+          <span style="width:30px; height:30px; background:var(--navy-700); color:#fff; border-radius:50%; display:grid; place-items:center; font-weight:700;">2</span>
+          <span>เกณฑ์อัตรากำลังอิงจำนวนหัว → ได้ครูน้อยลงตามสัดส่วน</span>
+        </div>
+        <div class="s-card" style="padding:14px 20px; display:flex; align-items:center; gap:16px;">
+          <span style="width:30px; height:30px; background:var(--navy-700); color:#fff; border-radius:50%; display:grid; place-items:center; font-weight:700;">3</span>
+          <span>ครูต้องสอนควบชั้น / สอนไม่ตรงวิชาเอก</span>
+        </div>
+        <div class="s-card" style="background:var(--red-100); border-color:var(--red-600); padding:14px 20px; display:flex; align-items:center; gap:16px;">
+          <span style="width:30px; height:30px; background:var(--red-600); color:#fff; border-radius:50%; display:grid; place-items:center; font-weight:700;">↻</span>
+          <span><b>คุณภาพลดลง → ผู้ปกครองย้ายลูกออก → วนกลับสู่ขั้นที่ 1</b></span>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </section>
+
+  <!-- SLIDE 9 -->
+  <section class="slide" data-slide="9"
+    data-notes="ทีนี้มาดูฝั่งเงินบ้างครับ ต้นทุนการจัดการศึกษาไม่ได้ผูกกับจำนวนหัวนักเรียนครับ แต่ผูกกับ จำนวนห้องเรียนที่ต้องเปิด ค่าไฟ ค่าน้ำ ผู้อำนวยการ ธุรการ — ไม่ได้ลดลงเพราะเด็กหายไป เมื่อคำนวณดู โรงเรียน 48 คน มีต้นทุนต่อหัวประมาณ 13,000 บาท ขณะที่โรงเรียน 500 คน อยู่ที่ประมาณ 6,700 บาท ต่างกันเกือบสองเท่า แต่ระบบปัจจุบันให้เงินต่อหัว เท่ากันครับ แปลว่าโรงเรียนขนาดเล็กได้รับงบเพียงราวครึ่งหนึ่งของต้นทุนที่แท้จริง ต่อเนื่องมาทุกปีงบประมาณ">
+    <div class="slide-header"><span class="slide-tag">องก์ที่ 3 · วินิจฉัย</span><span class="slide-no">09 / 14</span></div>
+    <div class="slide-body">
+      <h2>ต้นทุนต่อหัว: เหตุใดโรงเรียนเล็กจึงขาดงบเสมอ</h2>
+      <div class="s-grid-2" style="margin-top:20px;">
+        <div class="s-card" style="background:var(--red-100); border-color:var(--red-600);">
+          <div style="font-size:2.2rem; font-weight:700; color:var(--red-600);">13,292 <small style="font-size:.9rem;">บาท/คน</small></div>
+          <h3 style="margin-top:6px;">โรงเรียนขนาดเล็ก (48 คน)</h3>
+          <p>ต้นทุนต่อหัวสูงเกือบ 2 เท่า เพราะต้องแบกรับ Fixed Cost Floor (อาคาร บริหาร น้ำไฟ)</p>
+        </div>
+        <div class="s-card">
+          <div style="font-size:2.2rem; font-weight:700; color:var(--navy-700);">6,700 <small style="font-size:.9rem;">บาท/คน</small></div>
+          <h3 style="margin-top:6px;">โรงเรียนขนาดใหญ่ (500 คน)</h3>
+          <p>ต้นทุนต่อหัวต่ำกว่า เพราะมีการประหยัดต่อขนาด (Economies of scale) ชัดเจน</p>
+        </div>
+      </div>
+      <p style="margin-top:16px; font-size:.86rem; color:var(--text-3);">*เป็นการคำนวณเชิงสาธิตจากสมมติฐาน Fixed Cost 350,000 บาท/โรงเรียน — ยืนยันว่าระบบปัจจุบันจ่ายเงินเท่ากันทุกโรงเรียน ทำให้โรงเรียนเล็กขาดทุนโครงสร้าง</p>
+    </div>
+    <div></div>
+  </section>
+
+  <!-- SLIDE 10 -->
+  <section class="slide" data-slide="10"
+    data-notes="ข้อเสนอของผมมีเพียงข้อเดียวครับ เปลี่ยนฐานที่สูตรใช้คำนวณ จากเดิมที่คำนวณจาก จำนวนนักเรียน เปลี่ยนเป็น จำนวนห้องเรียนที่ต้องเปิดสอนจริง บวกดัชนีความยากลำบากของพื้นที่ และข้อที่ผมอยากเน้นคือ การเปลี่ยนเกณฑ์อัตรากำลังครูนี้ อยู่ในอำนาจของ ก.ค.ศ. ครับ ไม่ต้องแก้พระราชบัญญัติ และไม่ต้องขอเงินเพิ่มแม้แต่บาทเดียว">
+    <div class="slide-header"><span class="slide-tag">องก์ที่ 4 · ทางออก</span><span class="slide-no">10 / 14</span></div>
+    <div class="slide-body">
+      <h2>ทางออก: เปลี่ยนฐานของสูตรจัดสรร</h2>
+      <div class="s-grid-2" style="margin-top:20px;">
+        <div class="s-card" style="opacity:.6;">
+          <h3 style="color:var(--red-600);">❌ ฐานเดิม</h3>
+          <p style="font-size:1.1rem; font-weight:600; margin-top:8px;">“จำนวนนักเรียน (Per-capita)”</p>
+          <p style="margin-top:6px;">ให้เท่ากันทุกหัว ลงโทษโรงเรียนพื้นที่ห่างไกลและโรงเรียนขนาดเล็ก</p>
+        </div>
+        <div class="s-card" style="background:var(--green-100); border-color:var(--green-600);">
+          <h3 style="color:var(--green-600);">✅ ฐานที่เสนอ (WSF)</h3>
+          <p style="font-size:1.1rem; font-weight:600; margin-top:8px;">“ห้องเรียน + ดัชนีความยากลำบาก”</p>
+          <p style="margin-top:6px;">Fixed Cost Floor + น้ำหนักผู้เรียน + ตัวคูณบริบทพื้นที่</p>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </section>
+
+  <!-- SLIDE 11 -->
+  <section class="slide" data-slide="11"
+    data-notes="วันนี้ผมขออนุมัติสามเรื่องครับ เรื่องแรก — ทบทวนเกณฑ์อัตรากำลังครูให้อิงห้องเรียน ซึ่งทำได้ด้วยมติ ก.ค.ศ. เรื่องที่สอง — ให้ WSF Sandbox ขยายผลโดยใช้ การจับสลากลำดับ แทนการเลือกพื้นที่ตามดุลพินิจ เรื่องที่สาม — อนุมัติให้ศึกษาต้นทุนการจัดการศึกษาอย่างเป็นระบบ เพื่อให้ค่าน้ำหนักในสูตรมีฐานรองรับ ไม่ใช่ตัวเลขที่ตกลงกันในห้องประชุม สองเรื่องแรก ไม่ต้องใช้งบประมาณเพิ่มครับ">
+    <div class="slide-header"><span class="slide-tag">องก์ที่ 4 · ทางออก</span><span class="slide-no">11 / 14</span></div>
+    <div class="slide-body">
+      <h2>สามมติที่ขออนุมัติ — ทำได้ทันทีโดยไม่ต้องแก้ พ.ร.บ.</h2>
+      <div class="s-grid-3" style="margin-top:20px;">
+        <div class="s-card" style="border-top:4px solid var(--green-600);">
+          <h3>1. ทบทวนเกณฑ์อัตรากำลัง</h3>
+          <p>เปลี่ยนจากอิงจำนวนนักเรียน เป็น “ห้องเรียน + ดัชนีความยากลำบาก”</p>
+          <p style="margin-top:10px; font-weight:600; color:var(--green-600);">📌 ผ่านมติ ก.ค.ศ.</p>
+        </div>
+        <div class="s-card" style="border-top:4px solid var(--amber-500);">
+          <h3>2. สุ่มลำดับใน Sandbox</h3>
+          <p>ขยายผล WSF Sandbox แบบ Stepped-Wedge เพื่อวัดผลและสร้างข้อมูล CFA</p>
+          <p style="margin-top:10px; font-weight:600; color:var(--amber-500);">📌 ต้นทุนใกล้ศูนย์</p>
+        </div>
+        <div class="s-card" style="border-top:4px solid var(--navy-700);">
+          <h3>3. ทำ CFA ควบคู่ BIA</h3>
+          <p>ศึกษาฟังก์ชันต้นทุนการจัดการศึกษาและสัดส่วนการกระจายทรัพยากร</p>
+          <p style="margin-top:10px; font-weight:600; color:var(--navy-700);">📌 ใช้งบวิจัยหลัก</p>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </section>
+
+  <!-- SLIDE 12 -->
+  <section class="slide" data-slide="12"
+    data-notes="ผมขออธิบายเรื่องที่สองเพิ่มสักนิดครับ เพราะเป็นเรื่องที่มีกรอบเวลาจำกัด เรามีงบไม่พอให้ทุกเขตพร้อมกันอยู่แล้ว เพราะฉะนั้นคำถามจึงไม่ใช่ จะให้ใครบ้าง แต่คือ จะให้ใครก่อน ผมเสนอให้ จับสลาก ครับ ด้วยเหตุผลสองข้อ ข้อแรก มันตัดข้อครหาเรื่องการเลือกพื้นที่ออกไปทั้งหมด ข้อที่สอง และข้อนี้สำคัญกว่า — การจับสลากคือสิ่งเดียวที่จะทำให้เรารู้ว่านโยบายนี้ได้ผลจริงหรือไม่ เพราะถ้าเราเลือกเขตที่พร้อมที่สุดไปก่อน แล้วผลออกมาดี เราจะไม่มีวันรู้ว่าดีเพราะนโยบาย หรือดีเพราะเขาพร้อมอยู่แล้วครับ และเรื่องนี้ต้องตัดสินใจ ก่อนรุ่นขยายผลรุ่นถัดไป เพราะทำย้อนหลังไม่ได้ครับ">
+    <div class="slide-header"><span class="slide-tag">องก์ที่ 4 · ทางออก</span><span class="slide-no">12 / 14</span></div>
+    <div class="slide-body">
+      <h2>ทำไมต้องสุ่มลำดับ (Stepped-Wedge Sandbox)?</h2>
+      <div class="s-grid-2" style="margin-top:16px;">
+        <div class="s-card">
+          <h3>ทุกพื้นที่ได้รับครบ</h3>
+          <p>ไม่ใช่การทดลองแบบมีกลุ่มควบคุมถาวร ทุกเขตพื้นที่ได้รับมาตรการครบทั้งหมด — <b>เปลี่ยนเพียงลำดับการได้ก่อน-หลัง</b> ตัดข้อโต้แย้งเรื่องความไม่เป็นธรรมออกไป</p>
+        </div>
+        <div class="s-card" style="background:var(--amber-100);">
+          <h3 style="color:#855811;">สร้างวัตถุดิบให้ CFA</h3>
+          <p>การจับสลากสร้าง “ความผันแปรของทรัพยากรที่เป็นอิสระจากความจำเป็น” ซึ่งเป็นวัตถุดิบเดียวที่จำเป็นต่อการประมาณค่า Cost Function Analysis ในประเทศไทย</p>
+        </div>
+      </div>
+    </div>
+    <div></div>
+  </section>
+
+  <!-- SLIDE 13 -->
+  <section class="slide" data-slide="13"
+    data-notes="ก่อนปิด ผมขออนุญาตพูดถึงสิ่งที่ข้อเสนอนี้ ไม่ได้ขอ ครับ ไม่ได้ขอเพิ่มงบ ไม่ได้ขอแก้พระราชบัญญัติ ไม่ได้ขอย้ายครูที่ปฏิบัติงานอยู่ — เราจะใช้เฉพาะอัตราเกษียณตามธรรมชาติ และไม่ได้ขอให้โรงเรียนใดได้รับน้อยลงกว่าเดิม สิ่งที่ผมขอ คือการเปลี่ยน วิธีคิด ของสูตร ไม่ใช่การเปลี่ยน ขนาด ของงบครับ">
+    <div class="slide-header"><span class="slide-tag">องก์ที่ 5 · สรุป</span><span class="slide-no">13 / 14</span></div>
+    <div class="slide-body">
+      <h2>ข้อเสนอนี้ <span>“ไม่ได้ขอ”</span> อะไรบ้าง</h2>
+      <div class="s-grid-2" style="margin-top:20px;">
+        <div class="s-card">
+          <ul style="margin:0; padding-left:20px; font-size:1.05rem; line-height:2; color:var(--slide-sub);">
+            <li>❌ <b>ไม่ได้ขอเพิ่มงบประมาณ</b></li>
+            <li>❌ <b>ไม่ได้ขอแก้พระราชบัญญัติ</b></li>
+          </ul>
+        </div>
+        <div class="s-card">
+          <ul style="margin:0; padding-left:20px; font-size:1.05rem; line-height:2; color:var(--slide-sub);">
+            <li>❌ <b>ไม่ได้ขอย้ายครูที่ปฏิบัติงานอยู่</b></li>
+            <li>❌ <b>ไม่ได้ขอให้โรงเรียนใดได้รับน้อยลง</b></li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:20px; font-weight:600; text-align:center; font-size:1.1rem; color:var(--navy-700);">
+        “เราเปลี่ยนวิธีคิดของสูตร ไม่ได้เปลี่ยนขนาดของงบประมาณ”
+      </p>
+    </div>
+    <div></div>
+  </section>
+
+  <!-- SLIDE 14 -->
+  <section class="slide" data-slide="14"
+    data-notes="ท่านครับ ทุกปีที่เราไม่แก้สูตร ระบบจะผลิตซ้ำความเหลื่อมล้ำอีกหนึ่งรุ่นโดยอัตโนมัติ ไม่ใช่เพราะใครตั้งใจครับ แต่เพราะสูตรถูกเขียนไว้อย่างนั้น และสูตร คือสิ่งที่แก้ได้ด้วยมติเดียวครับ ขอบพระคุณครับ">
+    <div class="slide-header"><span class="slide-tag">องก์ที่ 5 · สรุป</span><span class="slide-no">14 / 14</span></div>
+    <div class="slide-body" style="text-align:center; align-items:center; justify-content:center;">
+      <h2 style="font-size:clamp(1.8rem,4vw,2.8rem); line-height:1.4; max-width:32ch; margin-bottom:20px;">
+        ทุกปีที่เราไม่แก้สูตร<br>
+        <span style="color:var(--amber-500);">ระบบจะผลิตซ้ำความเหลื่อมล้ำอีกหนึ่งรุ่นโดยอัตโนมัติ</span>
+      </h2>
+      <p class="lead-txt" style="text-align:center;">
+        ไม่ใช่เพราะใครตั้งใจ แต่เพราะสูตรถูกเขียนไว้อย่างนั้น<br>
+        <strong>และสูตรคือสิ่งที่แก้ได้ด้วยมติเดียว</strong>
+      </p>
+      <p style="margin-top:18px;text-align:center;">
+        <a href="qa-slides.html" class="deck-btn">เปิดคู่มือตอบคำถามยาก →</a>
+      </p>
+    </div>
+    <div style="text-align:center; font-weight:600; color:var(--text-3);">ขอบพระคุณครับ</div>
+  </section>
+
+</main>
+
+<!-- FOOTER NAV -->
+<footer class="deck-footer">
+  <button type="button" class="deck-nav-btn" id="prevBtn" disabled>← ก่อนหน้า</button>
+  <span style="font-size:.85rem; font-weight:500; color:var(--text-2);" id="slideHint">ใช้ปุ่มลูกศร ← → บนคีย์บอร์ดเพื่อเลื่อน</span>
+  <button type="button" class="deck-nav-btn" id="nextBtn">ถัดไป →</button>
+</footer>
+
+<!-- NOTES DRAWER -->
+<div class="notes-drawer" id="notesDrawer">
+  <div class="notes-header">
+    <strong>🎙️ บทพูด / Speaker Notes (สไลด์ <span id="noteSlideNo">1</span>)</strong>
+    <button class="notes-close" id="notesClose">✕</button>
+  </div>
+  <div class="notes-content" id="notesText">กำลังโหลดบทพูด...</div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script>
+(function() {
+  'use strict';
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  let current = 0;
+
+  const counter = document.getElementById('slideCounter');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const notesDrawer = document.getElementById('notesDrawer');
+  const notesToggle = document.getElementById('notesToggle');
+  const notesClose = document.getElementById('notesClose');
+  const notesText = document.getElementById('notesText');
+  const noteSlideNo = document.getElementById('noteSlideNo');
+  const fullscreenToggle = document.getElementById('fullscreenToggle');
+
+  function slideFromHash() {
+    const n = parseInt((location.hash || '').replace('#', ''), 10);
+    if (n >= 1 && n <= total) current = n - 1;
+  }
+
+  function update(writeHash) {
+    slides.forEach((s, i) => {
+      const on = i === current;
+      s.classList.toggle('is-active', on);
+      s.toggleAttribute('inert', !on);
+      s.setAttribute('aria-hidden', on ? 'false' : 'true');
+    });
+    counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total - 1;
+    const activeSlide = slides[current];
+    notesText.innerHTML = '<p>' + (activeSlide.dataset.notes || 'ไม่มีบทพูดสำหรับสไลด์นี้') + '</p>';
+    noteSlideNo.textContent = current + 1;
+    if (writeHash !== false) {
+      const nextHash = '#' + (current + 1);
+      if (location.hash !== nextHash) history.replaceState(null, '', nextHash);
+    }
+  }
+
+  function goNext() { if (current < total - 1) { current++; update(); } }
+  function goPrev() { if (current > 0) { current--; update(); } }
+
+  prevBtn.addEventListener('click', goPrev);
+  nextBtn.addEventListener('click', goNext);
+
+  document.addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ' || e.code === 'Space') {
+      e.preventDefault();
+      goNext();
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); goPrev(); }
+    if (e.key === 'n' || e.key === 'N') { setNotesOpen(!notesDrawer.classList.contains('is-open')); }
+    if (e.key === 'f' || e.key === 'F') { toggleFullscreen(); }
+    if (e.key === 'Escape') { setNotesOpen(false); }
+  });
+
+  function setNotesOpen(open) {
+    notesDrawer.classList.toggle('is-open', open);
+    notesToggle.setAttribute('aria-expanded', String(open));
+  }
+  notesToggle.addEventListener('click', () => setNotesOpen(!notesDrawer.classList.contains('is-open')));
+  notesClose.addEventListener('click', () => setNotesOpen(false));
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {});
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+  fullscreenToggle.addEventListener('click', toggleFullscreen);
+  window.addEventListener('hashchange', () => { slideFromHash(); update(false); });
+
+  slideFromHash();
+  update();
+})();
+</script>
+</body>
+</html>

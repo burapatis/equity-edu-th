@@ -14,6 +14,8 @@ report.html           รายงานฉบับเต็ม 21 ส่วน
 simulator.html        เครื่องมือจำลองสูตร WSF
 gap-map.html          แผนที่ช่องว่างอัตรากำลังครู
 infographic.html      Infographic A4 สองหน้า
+slides.html           ชุดนำเสนอ 14 สไลด์ พร้อมบทพูด
+qa-slides.html        คู่มือรับมือคำถามยาก 10 ข้อ
 resources.html        คลังทรัพยากร อภิธานศัพท์ แหล่งอ้างอิง
 about.html            เกี่ยวกับเว็บไซต์ ผู้จัดทำ และการใช้ข้อมูล
 404.html              หน้าไม่พบสำหรับโฮสต์สแตติก

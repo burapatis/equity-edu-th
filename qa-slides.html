@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>คู่มือรับมือคำถามยาก (Q&A Master Deck) | ความเสมอภาคทางการศึกษาไทย</title>
+<meta name="description" content="สคริปต์ตอบคำถามยาก 10 ข้อ พร้อมบทพูดคำต่อคำและยุทธศาสตร์การตอบสำหรับผู้บริหารและผู้นำเสนอ">
+<!-- EET:CHROME-HEAD -->
+<meta name="theme-color" content="#1a2b4c">
+<link rel="canonical" href="https://eet.thamdee.com/qa-slides.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="th_TH">
+<meta property="og:url" content="https://eet.thamdee.com/qa-slides.html">
+<meta property="og:title" content="คู่มือรับมือคำถามยาก (Q&A Master Deck) | ความเสมอภาคทางการศึกษาไทย">
+<meta property="og:description" content="สคริปต์ตอบคำถามยาก 10 ข้อ พร้อมบทพูดคำต่อคำและยุทธศาสตร์การตอบสำหรับผู้บริหารและผู้นำเสนอ">
+<meta property="og:image" content="https://eet.thamdee.com/assets/img/og-image.png">
+<meta property="og:image:alt" content="97:3 ความเสมอภาคทางการศึกษาไทย">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="คู่มือรับมือคำถามยาก (Q&A Master Deck) | ความเสมอภาคทางการศึกษาไทย">
+<meta name="twitter:description" content="สคริปต์ตอบคำถามยาก 10 ข้อ พร้อมบทพูดคำต่อคำและยุทธศาสตร์การตอบสำหรับผู้บริหารและผู้นำเสนอ">
+<meta name="twitter:image" content="https://eet.thamdee.com/assets/img/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/og-image.png">
+<!-- /EET:CHROME-HEAD -->
+<style>
+/* ============================================================
+   Q&A SLIDES PRESENTATION SYSTEM (16:9)
+   ============================================================ */
+:root {
+  --slide-bg: #f4f6f9;
+  --slide-card: #ffffff;
+  --slide-text: #16202f;
+  --slide-sub: #4a5769;
+  --slide-border: #e2e8f1;
+}
+[data-theme="dark"] {
+  --slide-bg: #070d18;
+  --slide-card: #111a2b;
+  --slide-text: #e8edf5;
+  --slide-sub: #a9b6c9;
+  --slide-border: #233149;
+}
+
+body.deck-body {
+  margin: 0;
+  padding: 0;
+  background: var(--slide-bg);
+  color: var(--slide-text);
+  font-family: var(--ff);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.45;
+}
+body.deck-body p { margin: 0; }
+body.deck-body a.deck-brand:hover,
+body.deck-body a.deck-btn:hover { text-decoration: none; }
+
+.deck-topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 54px;
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 100;
+}
+.deck-brand {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--text);
+  text-decoration: none;
+}
+.deck-brand span { color: var(--amber-500); }
+.deck-counter {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--text-2);
+  background: var(--bg-alt);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+.deck-tools {
+  display: flex;
+  gap: 8px;
+}
+.deck-btn {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: .8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.deck-btn:hover { background: var(--border); }
+
+.deck-stage {
+  flex: 1;
+  position: relative;
+  margin-top: 54px;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.slide {
+  position: relative;
+  grid-area: 1 / 1;
+  width: min(100%, 1280px);
+  aspect-ratio: 16 / 9;
+  max-height: calc(100vh - 130px);
+  background: var(--slide-card);
+  border: 1px solid var(--slide-border);
+  border-radius: 18px;
+  box-shadow: var(--shadow-lg);
+  padding: clamp(28px, 4vw, 52px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  transform: scale(.97);
+  transition: opacity .3s ease, transform .3s ease;
+  overflow-y: auto;
+}
+.slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+  transform: scale(1);
+}
+
+.slide-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.slide-tag {
+  font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--navy-700); background: var(--bg-alt); padding: 4px 12px; border-radius: 6px; border: 1px solid var(--border);
+}
+.slide-no { font-family: 'IBM Plex Sans', sans-serif; font-size: .85rem; color: var(--text-3); }
+
+.qa-box {
+  background: var(--red-100);
+  border-left: 5px solid var(--red-600);
+  padding: 16px 20px;
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 16px;
+}
+.qa-box h3 {
+  color: var(--red-600);
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin: 0 0 4px;
+}
+.qa-box p {
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.strategy-box {
+  background: var(--amber-100);
+  border: 1px solid color-mix(in srgb, var(--amber-500) 40%, transparent);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: .9rem;
+  color: #724e00;
+  margin-bottom: 14px;
+}
+[data-theme="dark"] .strategy-box { color: var(--amber-400); }
+
+.script-box {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  padding: 18px 22px;
+  border-radius: 12px;
+  flex: 1;
+  overflow-y: auto;
+}
+.script-box h4 {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--text-3);
+  margin: 0 0 8px;
+}
+.script-box p {
+  font-size: clamp(.95rem, 1.5vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--slide-text);
+  margin: 0;
+}
+
+.deck-footer {
+  height: 50px;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 24px;
+}
+.deck-nav-btn {
+  background: var(--navy-700); color: #fff; border: none; padding: 8px 18px;
+  border-radius: 8px; font-weight: 600; font-size: .85rem; cursor: pointer; transition: .2s;
+}
+.deck-nav-btn:hover { background: var(--navy-600); }
+.deck-nav-btn:disabled { opacity: .3; cursor: not-allowed; }
+</style>
+</head>
+<body class="deck-body">
+<a href="#stage" class="skip-link">ข้ามไปยังสไลด์</a>
+
+<!-- TOPBAR -->
+<header class="deck-topbar">
+  <a href="slides.html" class="deck-brand">← กลับชุดนำเสนอ</a>
+  <div class="deck-counter" id="slideCounter" aria-live="polite">01 / 10</div>
+  <div class="deck-tools">
+    <a href="index.html" class="deck-btn">หน้าแรก</a>
+    <button type="button" class="deck-btn" id="themeToggle" aria-label="สลับโหมดสี">โหมดสี</button>
+    <button type="button" class="deck-btn" id="fullscreenToggle" title="กดปุ่ม F">ขยายเต็มจอ (F)</button>
+  </div>
+</header>
+
+<!-- STAGE -->
+<main class="deck-stage" id="stage">
+
+  <!-- Q1 -->
+  <section class="slide is-active" data-slide="1">
+    <div class="slide-header"><span class="slide-tag">คำถามข้อที่ 01 / 10</span><span class="slide-no">Q1</span></div>
+    <div class="qa-box">
+      <h3>คำถามจากผู้ฟัง</h3>
+      <p>งบก็เท่าเดิม จะเอาเงินที่ไหนมาเพิ่มให้โรงเรียนเล็กโดยไม่มีใครเสียประโยชน์?</p>
+    </div>
+    <div class="strategy-box">
+      <strong>ยุทธศาสตร์การตอบ:</strong> ชี้ให้เห็นว่าปัญหาไม่ใช่ "เพิ่มเงิน" แต่เป็น "จัดสรรใหม่จากส่วนเกินตามโครงสร้างประชากร" ผ่านหลัก hold-harmless
+    </div>
+    <div class="script-box">
+      <h4>บทพูดคำต่อคำ (Script)</h4>
+      <p>“เป็นคำถามที่ตรงประเด็นมากครับ และผมขอเรียนย้ำว่าเรา <b>ไม่ได้ขอเพิ่มงบ</b> ครับ ระบบปัจจุบันมีงบประมาณก้อนใหญ่อยู่แล้ว สิ่งที่เราทำคือการใช้กลไก <b>hold-harmless</b> หรือการรับประกันว่าในช่วงเปลี่ยนผ่าน จะไม่มีโรงเรียนใดได้รับงบน้อยลงกว่าเดิมเด็ดขาด แต่เมื่อมีโรงเรียนขนาดใหญ่ที่นักเรียนลดลงตามภาวะประชากร เราจะใช้วิธี <b>เกลี่ยส่วนต่างตามความจำเป็นของห้องเรียน</b> ผ่านรอบเวลาหลายปี ไม่ใช่การตัดฉับพลันครับ ดังนั้นจึงไม่มีใครต้องเสียประโยชน์ทันที แต่ระบบจะค่อย ๆ ปรับเข้าสู่สมดุลใหม่โดยอัตโนมัติ”</p>
+    </div>
+  </section>
+
+  <!-- Q2 -->
+  <section class="slide" data-slide="2">
+    <div class="slide-header"><span class="slide-tag">คำถามข้อที่ 02 / 10</span><span class="slide-no">Q2</span></div>
+    <div class="qa-box">
+      <h3>คำถามจากผู้ฟัง</h3>
+      <p>การให้เงินเด็กหรือโรงเรียนไม่เท่ากัน เป็นการเลือกปฏิบัติและขัดต่อรัฐธรรมนูญหรือไม่?</p>
+    </div>
+    <div class="strategy-box">
+      <strong>ยุทธศาสตร์การตอบ:</strong> ดึงรัฐธรรมนูญมาเป็นเกราะป้องกันทันที โดยเฉพาะมาตรา 27 วรรคท้าย
+    </div>
+    <div class="script-box">
+      <h4>บทพูดคำต่อคำ (Script)</h4>
+      <p>“ขอบคุณมากครับสำหรับประเด็นข้อกฎหมาย ถ้านี่คือปี พ.ศ. 2540 คำถามนี้อาจจะถูกต้อง แต่ภายใต้ <b>รัฐธรรมนูญ พ.ศ. 2560 มาตรา 27 วรรคท้าย</b> ระบุไว้อย่างชัดเจนว่า มาตรการใดที่รัฐทำขึ้นเพื่อขจัดอุปสรรคหรือคุ้มครองผู้ด้อยโอกาส <b>ไม่ถือเป็นการเลือกปฏิบัติโดยไม่เป็นธรรม</b> ครับ รัฐธรรมนูญเปิดทางให้เราทำ Equity มานานแล้ว อุปสรรคไม่ได้อยู่ที่กฎหมายสูงสุด แต่อยู่ที่ระเบียบปฏิบัติระดับล่างต่างหากครับที่เราต้องมาปรับแก้ให้สอดคล้องกัน”</p>
+    </div>
+  </section>
+
+  <!-- Q3 -->
+  <section class="slide" data-slide="3">
+    <div class="slide-header"><span class="slide-tag">คำถามข้อที่ 03 / 10</span><span class="slide-no">Q3</span></div>
+    <div class="qa-box">
+      <h3>คำถามจากผู้ฟัง</h3>
+      <p>ถ้า Fixed Cost Floor สูงเกินไป จะกลายเป็นแรงจูงใจให้โรงเรียนขนาดเล็กไม่ยอมควบรวมหรือไม่?</p>
+    </div>
+    <div class="strategy-box">
+      <strong>ยุทธศาสตร์การตอบ:</strong> ยอมรับความเสี่ยงอย่างตรงไปตรงมา แล้วชี้ว่า Fixed Cost มีเพดานและผูกกับเงื่อนไขการเดินทาง
+    </div>
+    <div class="script-box">
+      <h4>บทพูดคำต่อคำ (Script)</h4>
+      <p>“เป็นข้อห่วงใยที่ถูกต้องและเฉียบคมมากครับ หากเราให้ Fixed Cost ก้อนใหญ่โดยไม่มีเงื่อนไข โรงเรียนอาจเลือกที่จะไม่ควบรวมจริง ๆ ครับ ทางแก้ของเราจึงไม่ใช่การปฏิเสธ Fixed Cost เพราะโรงเรียนยังไงก็ต้องมีค่าใช้จ่ายคงที่ แต่เราจะผูกมันเข้ากับ <b>เงื่อนไขระยะทางและความจำเป็นในการเข้าถึง</b> หากโรงเรียนอยู่ห่างจากโรงเรียนแม่ข่ายเกิน 10 กิโลเมตรและเดินทางลำบาก เขามีสิทธิ์รับ Fixed Cost เต็มจำนวนเพื่อรักษาโรงเรียนไว้ แต่ถ้าอยู่ใกล้กันและเดินทางสะดวก เงินก้อนนี้จะถูกปรับลดลงเมื่อมีการควบรวม นี่คือการใช้เงินเป็นตัวจูงใจ ไม่ใช่การปล่อยตามยถากรรมครับ”</p>
+    </div>
+  </section>
+
+  <!-- Q4 -->
+  <section class="slide" data-slide="4">
+    <div class="slide-header"><span class="slide-tag">คำถามข้อที่ 04 / 10</span><span class="slide-no">Q4</span></div>
+    <div class="qa-box">
+      <h3>คำถามจากผู้ฟัง</h3>
+      <p>ค่าน้ำหนักในสูตร (เช่น ยากจนพิเศษ +0.50) เอาอะไรมาวัด ทำไมถึงคิดว่าตัวเลขนี้ถูกต้อง?</p>
+    </div>
+    <div class="strategy-box">
+      <strong>ยุทธศาสตร์การตอบ:</strong> ยอมรับความจริงทันทีว่าตัวเลขปัจจุบันเป็น "ค่าสาธิต" แล้วเสนอทางออกด้วย Cost Function Analysis
+    </div>
+    <div class="script-box">
+      <h4>บทพูดคำต่อคำ (Script)</h4>
+      <p>“ท่านตาแหลมมากครับ และผมต้องเรียนตรง ๆ ว่า <b>ค่าน้ำหนักที่ท่านเห็นในวันนี้ยังเป็นตัวเลขสาธิต</b> ที่อิงจากวรรณกรรมสากลเท่านั้น ยังไม่ใช่ตัวเลขที่ผ่านการสอบเทียบของไทยครับ และนั่นคือเหตุผลหลักว่าทำไมข้อเสนอของเราจึงมี <b>ข้อที่สาม</b> คือการขออนุมัติทำ Cost Function Analysis เพื่อคำนวณตัวเลขที่แท้จริงจากข้อมูลของเราเอง สูตรในวันนี้ออกแบบมาเพื่อสาธิตกลไก แต่ตัวเลขที่จะใช้จริงต้องมาจากงานวิจัยเชิงประจักษ์ที่เรากำลังจะทำครับ”</p>
+    </div>
+  </section>
+
+  <!-- Q5 -->
+  <section class="slide" data-slide="5">
+    <div class="slide-header"><span class="slide-tag">คำถามข้อที่ 05 / 10</span><span class="slide-no">Q5</span></div>
+    <div class="qa-box">
+      <h3>คำถามจากผู้ฟัง</h3>
+      <p>ทำไมต้องยุ่งยากทำ Stepped-Wedge Sandbox และจับสลาก? ทำไมไม่ขยายผลไปทุกเขตพร้อมกันเลย?</p>
+    </div>
+    <div class="strategy-box">
+      <strong>ยุทธศาสตร์การตอบ:</strong> ชี้ให้เห็นข้อจำกัดทางการคลังและความจำเป็นทางวิชาการในการพิสูจน์ผล
+    </div>
+    <div class="script-box">
+      <h4>บทพูดคำต่อคำ (Script)</h4>
+      <p>“มีเหตุผลสองข้อครับ ข้อแรกคือ <b>งบประมาณและขีดความสามารถในการบริหารจัดการของเรามีจำกัด</b> เราไม่สามารถพลิกทั้งระบบพร้อมกันได้ในวันเดียวอยู่แล้ว จึงต้องทยอยทำ ข้อที่สอง และสำคัญที่สุดคือ <b>ถ้าเราไม่สุ่มลำดับ เราจะไม่มีวันรู้เลยว่านโยบายนี้ได้ผลจริงหรือไม่</b> ถ้าเราเลือกเขตที่พร้อมที่สุดไปก่อน แล้วผลออกมาดี เราจะตอบไม่ได้เลยว่าดีเพราะนโยบาย หรือดีเพราะเขาพร้อมอยู่แล้ว การจับสลากคือสิ่งเดียวที่จะให้คำตอบที่โปร่งใสและตรวจสอบได้แก่รัฐสภาและสำนักงบประมาณครับ”</p>
+    </div>
+  </section>
+
+  <!-- Q6 -->
+  <section class="slide" data-slide="6">
+    <div class="slide-header"><span class="slide-tag">คำถามข้อที่ 06 / 10</span><span class="slide-no">Q6</span></div>
+    <div class="qa-box">
+      <h3>คำถามจากผู้ฟัง</h3>
+      <p>โรงเรียนในเมืองหรือโรงเรียนใหญ่จะไม่ยอมเสียประโยชน์หรือ? ถ้าตัดงบเขามาเติม เขาจะฟ้องหรือประท้วงไหม?</p>
+    </div>
+    <div class="strategy-box">
+      <strong>ยุทธศาสตร์การตอบ:</strong> ย้ำหลัก hold-harmless และชี้ว่าโรงเรียนใหญ่ได้ประโยชน์ทางอ้อมจากคุณภาพเด็กที่เข้ามาระบบ
+    </div>
+    <div class="script-box">
+      <h4>บทพูดคำต่อคำ (Script)</h4>
+      <p>“นี่คือความเข้าใจผิดที่พบบ่อยที่สุดครับ เรา <b>ไม่ได้ตัดงบโรงเรียนใหญ่</b> เพื่อเอามาให้โรงเรียนเล็กครับ ภายใต้หลัก hold-harmless โรงเรียนใหญ่จะยังได้รับงบเท่าเดิมในฐานะตั้งต้น แต่เงินก้อนใหม่หรือส่วนเกินที่เกิดจากการเติบโตตามสูตร จะถูกจัดสรรไปยังจุดที่ขาดแคลนก่อน โรงเรียนใหญ่ไม่ได้สูญเสียอะไรเลยในแง่ตัวเลขตัวเงิน แต่ในทางกลับกัน เขากลับได้ประโยชน์ด้วยซ้ำ เพราะเด็กที่จบมาจากโรงเรียนรอบข้างจะมีคุณภาพดีขึ้น และไม่เป็นภาระในการปรับพื้นฐานเมื่อเขยิบขึ้นมาเรียนในระดับที่สูงขึ้นครับ”</p>
+    </div>
+  </section>
+
+  <!-- Q7 -->
+  <section class="slide" data-slide="7">
+    <div class="slide-header"><span class="slide-tag">คำถามข้อที่ 07 / 10</span><span class="slide-no">Q7</span></div>
+    <div class="qa-box">
+      <h3>คำถามจากผู้ฟัง</h3>
+      <p>ข้อมูล iSEE หรือ PMT ของ กสศ. มักถูกตั้งคำถามว่าคลาดเคลื่อนหรือมีการแต่งตัวเลขเพื่อเอาเงิน จะแก้ปัญหานี้อย่างไร?</p>
+    </div>
+    <div class="strategy-box">
+      <strong>ยุทธศาสตร์การตอบ:</strong> ชี้ว่าระบบข้อมูลมีกลไกตรวจสอบไขว้ และการกระจายความเสี่ยง
+    </div>
+    <div class="script-box">
+      <h4>บทพูดคำต่อคำ (Script)</h4>
+      <p>“เป็นคำถามที่ดีมากครับ ข้อมูล PMT ของ กสศ. ปัจจุบันเป็นหนึ่งในระบบคัดกรองที่แม่นยำที่สุดในภูมิภาค แต่เราไม่ได้เชื่อตัวเลขใดตัวเลขหนึ่งแบบเบ็ดเสร็จครับ เรามีระบบ <b>Cross-validation</b> หรือการตรวจสอบไขว้กับฐานข้อมูลสวัสดิการแห่งรัฐและ DMC ของ สพฐ. รวมถึงมีระบบสุ่มตรวจภาคสนาม (Audit) หากพบความผิดปกติ โรงเรียนจะถูกปรับลดน้ำหนักในปีถัดไปทันที การผูกเงินกับสูตรจะบังคับให้ระบบข้อมูลต้องสะอาดขึ้นโดยอัตโนมัติครับ”</p>
+    </div>
+  </section>
+
+  <!-- Q8 -->
+  <section class="slide" data-slide="8">
+    <div class="slide-header"><span class="slide-tag">คำถามข้อที่ 08 / 10</span><span class="slide-no">Q8</span></div>
+    <div class="qa-box">
+      <h3>คำถามจากผู้ฟัง</h3>
+      <p>สพฐ. และ ก.ค.ศ. จะยอมเปลี่ยนเกณฑ์อัตรากำลังครูตามข้อเสนอจริงหรือ ในเมื่ออำนาจเดิมหอมหวานและยึดโยงกับระบบราชการเดิม?</p>
+    </div>
+    <div class="strategy-box">
+      <strong>ยุทธศาสตร์การตอบ:</strong> เปลี่ยนมุมมองจากการ "เสียอำนาจ" เป็น "การแก้ปัญหาความเดือดร้อนของครูทั่วประเทศ"
+    </div>
+    <div class="script-box">
+      <h4>บทพูดคำต่อคำ (Script)</h4>
+      <p>“ผมเชื่อว่า สพฐ. และ ก.ค.ศ. อยากเห็นโรงเรียนมีครูครบชั้นและเด็กได้เรียนหนังสือเหมือนกันครับ ปัจจุบันเจ้าหน้าที่ในส่วนกลางก็ปวดหัวกับปัญหาครูไม่พอและเสียงร้องเรียนจากพื้นที่ชนบทเช่นกัน ข้อเสนอนี้ไม่ได้เป็นการริดรอนอำนาจ แต่เป็นการมอบ <b>เครื่องมือทางคณิตศาสตร์ที่ชอบธรรม</b> ให้เขาสามารถตอบสังคมได้ว่าทำไมเขตนี้ถึงได้อัตรากำลังเพิ่มขึ้น การใช้เกณฑ์ห้องเรียนช่วยปลดล็อกให้ผู้บริหารสามารถบริหารจัดการได้อย่างมีเหตุผลและลดแรงกดดันทางการเมืองด้วยซ้ำครับ”</p>
+    </div>
+  </section>
+
+  <!-- Q9 -->
+  <section class="slide" data-slide="9">
+    <div class="slide-header"><span class="slide-tag">คำถามข้อที่ 09 / 10</span><span class="slide-no">Q9</span></div>
+    <div class="qa-box">
+      <h3>คำถามจากผู้ฟัง</h3>
+      <p>ทำไมถึงบอกว่าเราไม่ได้ขาดครู แต่ปัญหาคือการกระจาย? ในเมื่อโรงเรียนในเมืองก็บอกว่าครูไม่พอเหมือนกัน?</p>
+    </div>
+    <div class="strategy-box">
+      <strong>ยุทธศาสตร์การตอบ:</strong> อ้างอิงตัวเลขสถิติภาพรวมที่หักลบกันระหว่าง สพป. และ สพม.
+    </div>
+    <div class="script-box">
+      <h4>บทพูดคำต่อคำ (Script)</h4>
+      <p>“ผมเข้าใจครับว่าคุณครูในเมืองรู้สึกว่าตัวเองสอนหนักและไม่พอ นั่นคือความจริงในระดับปฏิบัติการรายบุคคล แต่ถ้าเรามองที่ <b>ระดับโครงสร้างมหภาค</b> ตัวเลขของ สพฐ. ฟ้องชัดเจนครับว่า สพม. มีสัดส่วนนักเรียนต่อห้องสูงมากขณะที่บางแห่งมีครูเกิน ส่วน สพป. มีนักเรียนต่อห้องเฉลี่ยแค่ 14.6 คน ปัญหาจึงไม่ใช่ว่าประเทศไทยผลิตครูไม่พอครับ แต่ครูถูกกองไว้ในจุดที่เด็กบางตา และขาดแคลนในจุดที่ห้องเรียนกระจัดกระจาย การแก้ปัญหาจึงต้องแก้ที่ <b>การกระจายตัว</b> ไม่ใช่การเปิดสอบบรรจุเพิ่มอย่างไร้ทิศทางครับ”</p>
+    </div>
+  </section>
+
+  <!-- Q10 -->
+  <section class="slide" data-slide="10">
+    <div class="slide-header"><span class="slide-tag">คำถามข้อที่ 10 / 10</span><span class="slide-no">Q10</span></div>
+    <div class="qa-box">
+      <h3>คำถามจากผู้ฟัง</h3>
+      <p>ถ้าเปลี่ยนสูตรแล้วผลสัมฤทธิ์ทางการศึกษา (O-NET/PISA) ไม่ดีขึ้นภายใน 2 ปี ใครจะเป็นผู้รับผิดชอบ?</p>
+    </div>
+    <div class="strategy-box">
+      <strong>ยุทธศาสตร์การตอบ:</strong> จัดวางกรอบเวลาของผลลัพธ์ตามความเป็นจริง พร้อมชี้แจงบทบาทของคณะกรรมการกำกับ
+    </div>
+    <div class="script-box">
+      <h4>บทพูดคำต่อคำ (Script)</h4>
+      <p>“คำถามนี้เตือนสติเราได้ดีมากครับ ผลสัมฤทธิ์ระดับ PISA หรือ O-NET <b>ไม่สามารถพลิกฟื้นได้ภายใน 2 ปี</b> แน่นอนครับ เพราะเด็กที่สอบวันนี้สะสมความรู้มา 9 ปีแล้ว การคาดหวังผลลัพธ์แบบก้าวกระโดดในระยะสั้นคือความเข้าใจผิดทางนโยบาย สิ่งที่เราจะวัดใน 2 ปีแรกไม่ใช่คะแนนสอบทันที แต่เราจะวัด <b>ตัวชี้วัดที่เป็นเงื่อนไขนำทาง (Leading Indicators)</b> เช่น อัตราคงอยู่ของเด็ก การลดลงของห้องเรียนที่ครูไม่ครบชั้น และการใช้จ่ายที่ตรงตามความจำเป็น หากตัวชี้วัดเหล่านี้ไม่ขยับ คณะกรรมการกำกับดูแลสามารถทบทวนและปรับแก้ได้ทันทีครับ”</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER NAV -->
+<footer class="deck-footer">
+  <button type="button" class="deck-nav-btn" id="prevBtn" disabled>← ก่อนหน้า</button>
+  <span style="font-size:.85rem; font-weight:500; color:var(--text-2);" id="slideHint">ใช้ปุ่มลูกศร ← → บนคีย์บอร์ดเพื่อเลื่อนดูคำถาม</span>
+  <button type="button" class="deck-nav-btn" id="nextBtn">ถัดไป →</button>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+(function() {
+  'use strict';
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const total = slides.length;
+  let current = 0;
+
+  const counter = document.getElementById('slideCounter');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const fullscreenToggle = document.getElementById('fullscreenToggle');
+
+  function slideFromHash() {
+    const n = parseInt((location.hash || '').replace('#', ''), 10);
+    if (n >= 1 && n <= total) current = n - 1;
+  }
+
+  function update(writeHash) {
+    slides.forEach((s, i) => {
+      const on = i === current;
+      s.classList.toggle('is-active', on);
+      s.toggleAttribute('inert', !on);
+      s.setAttribute('aria-hidden', on ? 'false' : 'true');
+    });
+    counter.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === total - 1;
+    if (writeHash !== false) {
+      const nextHash = '#' + (current + 1);
+      if (location.hash !== nextHash) history.replaceState(null, '', nextHash);
+    }
+  }
+
+  function goNext() { if (current < total - 1) { current++; update(); } }
+  function goPrev() { if (current > 0) { current--; update(); } }
+
+  prevBtn.addEventListener('click', goPrev);
+  nextBtn.addEventListener('click', goNext);
+
+  document.addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ' || e.code === 'Space') {
+      e.preventDefault();
+      goNext();
+    }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); goPrev(); }
+    if (e.key === 'f' || e.key === 'F') { toggleFullscreen(); }
+  });
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {});
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+  fullscreenToggle.addEventListener('click', toggleFullscreen);
+  window.addEventListener('hashchange', () => { slideFromHash(); update(false); });
+
+  slideFromHash();
+  update();
+})();
+</script>
+</body>
+</html>
